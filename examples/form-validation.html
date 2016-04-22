@@ -17,7 +17,7 @@
       #example-form .columns.three .row.street-number {width:23%}
       #example-form .columns.three .row.street-name {width:60%}
       #example-form .columns.three .row.suite {width:15%}
-      #example-form label {overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(0,0,0,0);margin:-1px;padding:0;top:-500px;}
+      #example-form label.input-text {overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(0,0,0,0);margin:-1px;padding:0;top:-500px;}
       #example-form input[type="text"], #example-form select {margin-bottom:3px}
       #example-form input[type="text"]::-webkit-input-placeholder {color:#444}
       #example-form input[type="text"] {width:100%;padding:7px 8px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;line-height:1.4em}
@@ -30,44 +30,44 @@
     <div class="wrapper">
       <form name="exampleForm" id="example-form" action="" method="post">
         <div class="row">
-          <label for="firstname">First Name</label>
+          <label for="firstname" class="input-text">First Name</label>
           <input type="text" placeholder="First name *" name="firstName" id="firstname" value="">
           <span class="firstName error-message">Please enter your first name</span>
         </div>
         <div class="row">
-          <label for="lastname">Last Name</label>
+          <label for="lastname" class="input-text">Last Name</label>
           <input type="text" placeholder="Last name" name="lastName" id="lastname" value="">
           <span class="lastName error-message">Please enter your last name</span>
         </div>
         <div class="row">
-          <label for="email">Email</label>
+          <label for="email" class="input-text">Email</label>
           <input type="text" placeholder="Email Address *" name="email" id="email" value="">
           <span class="email error-message">Please enter a valid email</span>
         </div>
         <div class="columns three">
           <div class="row street-number">
-            <label for="streetNumber">Street Number</label>
+            <label for="streetNumber" class="input-text">Street Number</label>
             <input type="text" placeholder="Street Number *" name="streetNumber" id="streetNumber" value="">
             <span class="streetNumber error-message">Please enter your street number</span>
           </div>
-          <div class="row street-name">
+          <div class="row street-name" class="input-text">
             <label for="streetName">Street Name</label>
             <input type="text" placeholder="Street Name *" name="streetName" id="streetName" value="">
             <span class="streetName error-message">Please enter your street name</span>
           </div>
           <div class="row suite">
-            <label for="suite">Suite</label>
+            <label for="suite" class="input-text">Suite</label>
             <input type="text" placeholder="Apt/Suite" name="suite" id="suite" value="">
           </div>
         </div>
         <div class="columns three">
           <div class="row">
-            <label for="city">City</label>
+            <label for="city" class="input-text">City</label>
             <input type="text" placeholder="City *" name="city" id="city" value="">
             <span class="city error-message">Please enter your city</span>
           </div>
           <div class="row">
-            <label for="province">Province</label>
+            <label for="province" class="input-text">Province</label>
             <select name="province" id="province">
               <optgroup label="Provinces">
                 <option value="" disabled selected>Province/Terrority *</option>
@@ -89,7 +89,7 @@
             <span class="province error-message">Please enter your province</span>
           </div>
           <div class="row">
-            <label for="postalcode">Postal Code</label>
+            <label for="postalcode" class="input-text">Postal Code</label>
             <input type="text" placeholder="Postal Code *" name="postalCode" id="postalcode" value="">
             <span class="postalCode error-message">Please enter your postal code</span>
           </div>
