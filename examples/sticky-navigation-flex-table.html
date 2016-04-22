@@ -143,6 +143,8 @@
               }
             });    
           },
+          //setWidths(): set widths on sticky header clone items
+          //@param {object} $responsiveTable is the .responsive-table div
           setWidths : function ($responsiveTable) {
             $stickyHeaderFlexClone = $responsiveTable.siblings('.sticky-header-flex-clone');
             $responsiveTable
@@ -153,7 +155,8 @@
             // Set width of sticky table head
             $stickyHeaderFlexClone.width($responsiveTable.width());
           },
-          //set position of Sticky Header
+          //repositionStickyHeader(): set position of sticky header clone
+          //@param {object} $responsiveTable is the .responsive-table div
           repositionStickyHeader : function ($responsiveTable) {
             $responsiveTableWrapper = $responsiveTable.parent('.responsive-table-wrapper');
             $stickyHeaderFlexClone = $responsiveTable.siblings('.sticky-header-flex-clone');
@@ -194,6 +197,8 @@
               });
             }
           },
+          //scrollAndResizeListener(): watches for scrolling and resizing of page
+          //@param {object} $responsiveTable is the .responsive-table div
           scrollAndResizeListener: function ($responsiveTable) {
             var self = this;
             self.setWidths($responsiveTable);
