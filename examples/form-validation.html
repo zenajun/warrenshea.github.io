@@ -1,11 +1,15 @@
 <!doctype>
 <html lang="en">
   <head>
-    <title>From Validation</title>
-    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <title>Form Validation</title>
+    <link href="//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <style type="text/css">
+      /*Cosmetic CSS*/
       * {font-family:"lato"}
       .wrapper {margin:50px auto 0;width:100%;max-width:1200px}
+      #example-form input[type="text"].error, #example-form .error {border:1px solid red}
+      #example-form .error-message {display:none}
+      #example-form .error-message.active {display:block;color:red}
       #example-form .row {padding-bottom:20px;overflow:hidden}
       #example-form .columns.three > div {float:left;margin-right:1%;width:32.667%}
       #example-form .columns > div:last-child {margin-right:0}
@@ -13,11 +17,6 @@
       #example-form .columns.three .row.street-number {width:23%}
       #example-form .columns.three .row.street-name {width:60%}
       #example-form .columns.three .row.suite {width:15%}
-      
-      #example-form input[type="text"].error, #example-form .error {border:1px solid red}
-      #example-form .error-message {display:none}
-      #example-form .error-message.active {display:block;color:red}
-
       #example-form input[type="text"], #example-form select {margin-bottom:3px}
       #example-form input[type="text"]::-webkit-input-placeholder {color:#444}
       #example-form input[type="text"] {width:100%;padding:7px 8px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;line-height:1.4em}
@@ -30,37 +29,45 @@
     <div class="wrapper">
       <form name="exampleForm" id="example-form" action="" method="post">
         <div class="row">
-          <input placeholder="First name *" type="text" name="firstName" value="">
+          <label for="firstname">First Name</label>
+          <input type="text" placeholder="First name *" name="firstName" id="firstname" value="">
           <span class="firstName error-message">Please enter your first name</span>
         </div>
         <div class="row">
-          <input placeholder="Last name" type="text" name="lastName" value="">
+          <label for="lastname">Last Name</label>
+          <input type="text" placeholder="Last name" name="lastName" id="lastname" value="">
           <span class="lastName error-message">Please enter your last name</span>
         </div>
         <div class="row">
-          <input placeholder="Email Address *" type="text" name="email" value="">
+          <label for="email">Email</label>
+          <input type="text" placeholder="Email Address *" name="email" id="email" value="">
           <span class="email error-message">Please enter a valid email</span>
         </div>
         <div class="columns three">
           <div class="row street-number">
-            <input placeholder="Street Number *" type="text" name="streetNumber" value="">
+            <label for="streetNumber">Street Number</label>
+            <input type="text" placeholder="Street Number *" name="streetNumber" id="streetNumber" value="">
             <span class="streetNumber error-message">Please enter your street number</span>
           </div>
           <div class="row street-name">
-            <input placeholder="Street Name *" type="text" name="streetName" value="">
+            <label for="streetName">Street Name</label>
+            <input type="text" placeholder="Street Name *" name="streetName" id="streetName" value="">
             <span class="streetName error-message">Please enter your street name</span>
           </div>
           <div class="row suite">
-            <input placeholder="Apt/Suite" type="text" name="suite" value="">
+            <label for="suite">Suite</label>
+            <input type="text" placeholder="Apt/Suite" name="suite" id="suite" value="">
           </div>
         </div>
         <div class="columns three">
           <div class="row">
-            <input placeholder="City *" type="text" name="city" value="">
+            <label for="city">City</label>
+            <input type="text" placeholder="City *" name="city" id="city" value="">
             <span class="city error-message">Please enter your city</span>
           </div>
           <div class="row">
-            <select name="province">
+            <label for="province">Province</label>
+            <select name="province" id="province">
               <option value="" disabled selected>Province/Terrority *</option>
               <option value="AB">Alberta</option>
               <option value="BC">British Columbia</option>
@@ -79,7 +86,8 @@
             <span class="province error-message">Please enter your province</span>
           </div>
           <div class="row">
-            <input placeholder="Postal Code *" type="text" name="postalCode" value="">
+            <label for="postalCode">Postal Code</label>
+            <input type="text" placeholder="Postal Code *" name="postalCode" id="postalcode" value="">
             <span class="postalCode error-message">Please enter your postal code</span>
           </div>
         </div>
@@ -98,9 +106,8 @@
         </div>
       </form>
     </div>
-    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
     <script src="/resources/scripts/core.js"></script>
-
     <script>
       sandbox.core.extend('formValidation', function(){
         return {
