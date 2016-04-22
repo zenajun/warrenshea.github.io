@@ -68,25 +68,27 @@
           <div class="row">
             <label for="province">Province</label>
             <select name="province" id="province">
-              <option value="" disabled selected>Province/Terrority *</option>
-              <option value="AB">Alberta</option>
-              <option value="BC">British Columbia</option>
-              <option value="MB">Manitoba</option>
-              <option value="NB">New Brunswick</option>
-              <option value="NL">Newfoundland and Labrador</option>
-              <option value="NS">Nova Scotia</option>
-              <option value="ON">Ontario</option>
-              <option value="PE">Prince Edward Island</option>
-              <option value="QC">Quebec</option>
-              <option value="SK">Saskatchewan</option>
-              <option value="NT">Northwest Territories</option>
-              <option value="NU">Nunavut</option>
-              <option value="YT">Yukon</option>
+              <optgroup label="Provinces">
+                <option value="" disabled selected>Province/Terrority *</option>
+                <option value="AB">Alberta</option>
+                <option value="BC">British Columbia</option>
+                <option value="MB">Manitoba</option>
+                <option value="NB">New Brunswick</option>
+                <option value="NL">Newfoundland and Labrador</option>
+                <option value="NS">Nova Scotia</option>
+                <option value="ON">Ontario</option>
+                <option value="PE">Prince Edward Island</option>
+                <option value="QC">Quebec</option>
+                <option value="SK">Saskatchewan</option>
+                <option value="NT">Northwest Territories</option>
+                <option value="NU">Nunavut</option>
+                <option value="YT">Yukon</option>
+              </optgroup>
             </select>
             <span class="province error-message">Please enter your province</span>
           </div>
           <div class="row">
-            <label for="postalCode">Postal Code</label>
+            <label for="postalcode">Postal Code</label>
             <input type="text" placeholder="Postal Code *" name="postalCode" id="postalcode" value="">
             <span class="postalCode error-message">Please enter your postal code</span>
           </div>
@@ -97,9 +99,12 @@
           <span class="checkbox error-message">Please check the checkbox</span>
         </div>
         <div class="row">
-          <input name="radioButton" id="radio-button-yes" type="radio" value="Yes"><label for="radio-button-yes">Yes</label><br>
-          <input name="radioButton" id="radio-button-no" type="radio" value="No"><label for="radio-button-no">No</label>
-          <span class="radioButton error-message">Please select a radio button</span>
+          <fieldset>
+            <legend>Radio Buttons</legend>
+            <input name="radioButton" id="radio-button-yes" type="radio" value="Yes"><label for="radio-button-yes">Yes</label><br>
+            <input name="radioButton" id="radio-button-no" type="radio" value="No"><label for="radio-button-no">No</label>
+            <span class="radioButton error-message">Please select a radio button</span>
+          </fieldset>
         </div>
         <div>
           <button type="submit" name="button" class="primary">Submit</button>
