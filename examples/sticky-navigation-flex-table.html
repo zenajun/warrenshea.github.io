@@ -1,26 +1,25 @@
 <!doctype>
-<html>
+<html lang="en">
   <head>
     <title>Sticky Navigation for Flex table</title>
-    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <style type="text/css">
-      * {font-family:"lato";}
-      .wrapper{margin:50px auto 2000px;width:100%;max-width:1200px;}
-      .wrapper .item-header {padding:2em 0;background:#eee;border:1px solid #cacaca;border-top:0;}
-      .wrapper .item-row {border-bottom: 1px solid #cacaca;}
-      .wrapper .item-row .item:last-child {border-right: 1px solid #cacaca;}
-      .wrapper .item-row .item {border-left: 1px solid #cacaca;flex: 1 1 0;align-items: center;padding:2em 0;}
-      .flex-row, .flex-row-center, .flex-row-between {display: flex;flex-direction: row; }
-      .flex-col, .flex-col-center, .flex-col-between {display: flex;flex-direction: column; }
-      .flex-row-center,.flex-col-center {justify-content: center; }
-      .flex-row-between,.flex-col-between {justify-content: space-between; }
-
-      .responsive-table-wrapper {resize:both !important;}  /* Responsive Table and Sticky header footer */
-      .responsive-table-wrapper {overflow-x:hidden;overflow-y:hidden;width:100%;} /* For appearance */
-      .responsive-table {margin:0;}
-      .wrapper .item-row.sticky-header-flex, .sticky-header-flex-clone {border-bottom:1px solid red;background:#ddd;}
-      .sticky-header-flex-clone div{background-color:#ddd;}
-      .responsive-table-wrapper .sticky-header-flex-clone {opacity:0;position:fixed;top:0;left:0;z-index:50;width:auto;left: 50%;transform: translateX(-50%); /* Prevent table from stretching to full size */ }
+      /*Cosmetic CSS*/
+      * {font-family:"lato"}
+      .wrapper{margin:50px auto 2000px;width:100%;max-width:1200px}
+      .flex-row, .flex-row-center, .flex-row-between {display: flex;flex-direction: row}
+      .flex-col, .flex-col-center, .flex-col-between {display: flex;flex-direction: column}
+      .flex-row-center,.flex-col-center {justify-content: center}
+      .flex-row-between,.flex-col-between {justify-content: space-between}
+      .item-header {padding:2em 0;background:#eee;border:1px solid #cacaca;border-top:0}
+      .item-row {border-bottom: 1px solid #cacaca}
+      .item-row .item:last-child {border-right: 1px solid #cacaca}
+      .item-row .item {border-left: 1px solid #cacaca;flex: 1 1 0;align-items: center;padding:2em 0}
+      .item-row.sticky-header-flex, .item-row.sticky-header-flex-clone {border-bottom:1px solid red;background:#ddd}      
+      .item-row.sticky-header-flex-clone div{background-color:#ddd}
+      /*Functional CSS*/
+      .responsive-table-wrapper {overflow-x:hidden;overflow-y:hidden;width:100%}
+      .responsive-table-wrapper .sticky-header-flex-clone {opacity:0;position:fixed;top:0;left:0;z-index:50;width:auto;left: 50%;transform: translateX(-50%)}
     </style>
   </head>
   <body>
@@ -109,7 +108,7 @@
         </div>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
     <script src="/resources/scripts/core.js"></script>
     <script>
       sandbox.core.extend('responsiveFlexSticky', function(){
