@@ -1,10 +1,10 @@
 const
   gulp = require('gulp'),
   cp = require('child_process'); 
-	sass = require('gulp-sass'),
-	plumber = require('gulp-plumber'),
+  sass = require('gulp-sass'),
+  plumber = require('gulp-plumber'),
   postcss = require('gulp-postcss'),
-	browserSync = require('browser-sync').create();
+  browserSync = require('browser-sync').create();
 const jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 gulp.task('build',['sass','scripts'], function (done) {
