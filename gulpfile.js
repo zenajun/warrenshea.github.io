@@ -1,14 +1,16 @@
-const gulp = require('gulp'),
+const
+  gulp = require('gulp'),
   cp = require('child_process'); 
 	sass = require('gulp-sass'),
 	plumber = require('gulp-plumber'),
-  postcss      = require('gulp-postcss'),
+  postcss = require('gulp-postcss'),
 	browserSync = require('browser-sync').create();
-const jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+const jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 gulp.task('build',['sass','scripts'], function (done) {
-    return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
-        .on('close', done);
+  return cp
+    .spawn( jekyll , ['build'], {stdio: 'inherit'})
+    .on('close', done);
 });
 
 gulp.task('build-jekyll',['build'], function () {
@@ -24,13 +26,13 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('serve',[], function () {
-    browserSync.init({
-      server: {
-        baseDir: '_site/'
-      },
-      directory: true,
-      startPath: 'index.html'
-    });
+  browserSync.init({
+    server: {
+      baseDir: '_site/'
+    },
+    directory: true,
+    startPath: 'index.html'
+  });
 });
 
 gulp.task('default', ['sass','scripts','build','serve']);
