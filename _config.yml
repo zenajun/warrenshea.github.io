@@ -1,0 +1,17 @@
+# Site settings
+title: warrenshea.github.io
+email: warren.shea@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Warren Shea's Sandbox, Code Examples, Notes, and Misc.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://warrenshea.github.io" # the base hostname & protocol for your site
+language: "en"
+alternate_language: "fr"
+country: "CA"
+page_schema: "WebSite"
+og_image_path: ""
+og_type: "website"
+
+# Build settings
+markdown: kramdown
+exclude: ["node_modules", "package.json", "gulpfile.js", "readme.md"]
