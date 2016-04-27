@@ -7,7 +7,7 @@ const
   browserSync = require('browser-sync').create();
 const jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
-gulp.task('build',['sass','scripts'], function (done) {
+gulp.task('build',['scripts'], function (done) {
   return cp
     .spawn( jekyll , ['build'], {stdio: 'inherit'})
     .on('close', done);
@@ -22,10 +22,13 @@ gulp.task('sass', function () {
 });
 
 gulp.task('scripts', function () {
-  return
+  return gulp.src('./resources/scripts/**/*.js')
+    .pipe(browserSync.reload({stream:true}))
+    .pipe(gulp.dest('./_site/resources/scripts'))
+    .pipe(gulp.dest('./resources/scripts'));
 });
 
-gulp.task('serve',[], function () {
+gulp.task('serve',['scripts'], function () {
   browserSync.init({
     server: {
       baseDir: '_site/'
@@ -33,6 +36,7 @@ gulp.task('serve',[], function () {
     directory: true,
     startPath: 'index.html'
   });
+  gulp.watch(['examples/**/*.html','_includes/**/*.html','_layouts/**/*.html'], ['build-jekyll']);
 });
 
 gulp.task('default', ['sass','scripts','build','serve']);

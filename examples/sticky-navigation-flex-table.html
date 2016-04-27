@@ -1,11 +1,9 @@
-<!doctype>
-<html lang="en">
-  <head>
-    <title>Sticky Navigation for Flex table</title>
-    <link href="//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+---
+layout: examples
+title: Sticky Navigation for Flex table
+stylesheets : |
     <style type="text/css">
       /*Cosmetic CSS*/
-      * {font-family:"lato"}
       .wrapper{margin:50px auto 2000px;width:100%;max-width:1200px}
       .flex-row, .flex-row-center, .flex-row-between {display: flex;flex-direction: row}
       .flex-col, .flex-col-center, .flex-col-between {display: flex;flex-direction: column}
@@ -21,95 +19,7 @@
       .responsive-table-wrapper {overflow-x:hidden;overflow-y:hidden;width:100%}
       .responsive-table-wrapper .sticky-header-flex-clone {opacity:0;position:fixed;top:0;left:0;z-index:50;width:auto;left: 50%;transform: translateX(-50%)}
     </style>
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="responsive-table">
-        <div class="item-row flex-row sticky-header-flex">
-          <div class="item flex-col sticky-item">Sticky Nav Header 1</div>
-          <div class="item flex-col sticky-item">Sticky Nav Header 2</div>
-          <div class="item flex-col sticky-item">Sticky Nav Header 3</div>
-          <div class="item flex-col sticky-item">Sticky Nav Header 4</div>
-          <div class="item flex-col sticky-item">Sticky Nav Header 5</div>
-        </div>
-        <div>
-          <div class="item-header flex-row-center">Table Header</div>
-          <div class="item-row flex-row">
-            <div class="item flex-col">Test Data 1</div>
-            <div class="item flex-col">Test Data 2</div>
-            <div class="item flex-col">Test Data 3</div>
-            <div class="item flex-col">Test Data 4</div>
-            <div class="item flex-col">Test Data 5</div>
-          </div>
-          <div class="item-row flex-row">
-            <div class="item flex-col">Test Data 1</div>
-            <div class="item flex-col">Test Data 2</div>
-            <div class="item flex-col">Test Data 3</div>
-            <div class="item flex-col">Test Data 4</div>
-            <div class="item flex-col">Test Data 5</div>
-          </div>
-          <div class="item-row flex-row">
-            <div class="item flex-col">Test Data 1</div>
-            <div class="item flex-col">Test Data 2</div>
-            <div class="item flex-col">Test Data 3</div>
-            <div class="item flex-col">Test Data 4</div>
-            <div class="item flex-col">Test Data 5</div>
-          </div>
-          <div class="item-row flex-row">
-            <div class="item flex-col">Test Data 1</div>
-            <div class="item flex-col">Test Data 2</div>
-            <div class="item flex-col">Test Data 3</div>
-            <div class="item flex-col">Test Data 4</div>
-            <div class="item flex-col">Test Data 5</div>
-          </div>
-          <div class="item-header flex-row-center">Table Header</div>
-          <div class="item-row flex-row">
-            <div class="item flex-col">Test Data 1</div>
-            <div class="item flex-col">Test Data 2</div>
-            <div class="item flex-col">Test Data 3</div>
-            <div class="item flex-col">Test Data 4</div>
-            <div class="item flex-col">Test Data 5</div>
-          </div>
-          <div class="item-row flex-row">
-            <div class="item flex-col">Test Data 1</div>
-            <div class="item flex-col">Test Data 2</div>
-            <div class="item flex-col">Test Data 3</div>
-            <div class="item flex-col">Test Data 4</div>
-            <div class="item flex-col">Test Data 5</div>
-          </div>
-          <div class="item-row flex-row">
-            <div class="item flex-col">Test Data 1</div>
-            <div class="item flex-col">Test Data 2</div>
-            <div class="item flex-col">Test Data 3</div>
-            <div class="item flex-col">Test Data 4</div>
-            <div class="item flex-col">Test Data 5</div>
-          </div>
-          <div class="item-row flex-row">
-            <div class="item flex-col">Test Data 1</div>
-            <div class="item flex-col">Test Data 2</div>
-            <div class="item flex-col">Test Data 3</div>
-            <div class="item flex-col">Test Data 4</div>
-            <div class="item flex-col">Test Data 5</div>
-          </div>
-          <div class="item-row flex-row">
-            <div class="item flex-col">Test Data 1</div>
-            <div class="item flex-col">Test Data 2</div>
-            <div class="item flex-col">Test Data 3</div>
-            <div class="item flex-col">Test Data 4</div>
-            <div class="item flex-col">Test Data 5</div>
-          </div>
-          <div class="item-row flex-row allowance">
-            <div class="item flex-col">Test Data</div>
-            <div class="item flex-col">Test Data</div>
-            <div class="item flex-col">Test Data</div>
-            <div class="item flex-col">Test Data</div>
-            <div class="item flex-col">Test Data</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="//code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
-    <script src="/resources/scripts/core.js"></script>
+scripts : |
     <script>
       sandbox.core.extend('responsiveFlexSticky', function(){
         $w = $(window);
@@ -215,5 +125,87 @@
         }
       }).init();
     </script>
-  </body>
-</html>
+---
+      <div class="responsive-table">
+        <div class="item-row flex-row sticky-header-flex">
+          <div class="item flex-col sticky-item">Sticky Nav Header 1</div>
+          <div class="item flex-col sticky-item">Sticky Nav Header 2</div>
+          <div class="item flex-col sticky-item">Sticky Nav Header 3</div>
+          <div class="item flex-col sticky-item">Sticky Nav Header 4</div>
+          <div class="item flex-col sticky-item">Sticky Nav Header 5</div>
+        </div>
+        <div>
+          <div class="item-header flex-row-center">Table Header</div>
+          <div class="item-row flex-row">
+            <div class="item flex-col">Test Data 1</div>
+            <div class="item flex-col">Test Data 2</div>
+            <div class="item flex-col">Test Data 3</div>
+            <div class="item flex-col">Test Data 4</div>
+            <div class="item flex-col">Test Data 5</div>
+          </div>
+          <div class="item-row flex-row">
+            <div class="item flex-col">Test Data 1</div>
+            <div class="item flex-col">Test Data 2</div>
+            <div class="item flex-col">Test Data 3</div>
+            <div class="item flex-col">Test Data 4</div>
+            <div class="item flex-col">Test Data 5</div>
+          </div>
+          <div class="item-row flex-row">
+            <div class="item flex-col">Test Data 1</div>
+            <div class="item flex-col">Test Data 2</div>
+            <div class="item flex-col">Test Data 3</div>
+            <div class="item flex-col">Test Data 4</div>
+            <div class="item flex-col">Test Data 5</div>
+          </div>
+          <div class="item-row flex-row">
+            <div class="item flex-col">Test Data 1</div>
+            <div class="item flex-col">Test Data 2</div>
+            <div class="item flex-col">Test Data 3</div>
+            <div class="item flex-col">Test Data 4</div>
+            <div class="item flex-col">Test Data 5</div>
+          </div>
+          <div class="item-header flex-row-center">Table Header</div>
+          <div class="item-row flex-row">
+            <div class="item flex-col">Test Data 1</div>
+            <div class="item flex-col">Test Data 2</div>
+            <div class="item flex-col">Test Data 3</div>
+            <div class="item flex-col">Test Data 4</div>
+            <div class="item flex-col">Test Data 5</div>
+          </div>
+          <div class="item-row flex-row">
+            <div class="item flex-col">Test Data 1</div>
+            <div class="item flex-col">Test Data 2</div>
+            <div class="item flex-col">Test Data 3</div>
+            <div class="item flex-col">Test Data 4</div>
+            <div class="item flex-col">Test Data 5</div>
+          </div>
+          <div class="item-row flex-row">
+            <div class="item flex-col">Test Data 1</div>
+            <div class="item flex-col">Test Data 2</div>
+            <div class="item flex-col">Test Data 3</div>
+            <div class="item flex-col">Test Data 4</div>
+            <div class="item flex-col">Test Data 5</div>
+          </div>
+          <div class="item-row flex-row">
+            <div class="item flex-col">Test Data 1</div>
+            <div class="item flex-col">Test Data 2</div>
+            <div class="item flex-col">Test Data 3</div>
+            <div class="item flex-col">Test Data 4</div>
+            <div class="item flex-col">Test Data 5</div>
+          </div>
+          <div class="item-row flex-row">
+            <div class="item flex-col">Test Data 1</div>
+            <div class="item flex-col">Test Data 2</div>
+            <div class="item flex-col">Test Data 3</div>
+            <div class="item flex-col">Test Data 4</div>
+            <div class="item flex-col">Test Data 5</div>
+          </div>
+          <div class="item-row flex-row allowance">
+            <div class="item flex-col">Test Data</div>
+            <div class="item flex-col">Test Data</div>
+            <div class="item flex-col">Test Data</div>
+            <div class="item flex-col">Test Data</div>
+            <div class="item flex-col">Test Data</div>
+          </div>
+        </div>
+      </div>

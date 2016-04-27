@@ -1,11 +1,9 @@
-<!doctype>
-<html lang="en">
-  <head>
-    <title>Form Validation</title>
-    <link href="//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+---
+layout: examples
+title: Form Validation
+stylesheets : |
     <style type="text/css">
       /*Cosmetic CSS*/
-      * {font-family:"lato"}
       .wrapper {margin:50px auto 0;width:100%;max-width:1200px}
       #example-form input[type="text"].error, #example-form .error {border:1px solid red}
       #example-form .error-message {display:none}
@@ -25,95 +23,7 @@
       #example-form input[type="checkbox"] + label {padding-left:2%}
       #example-form input[type="radio"] + label {padding-left:2%}
     </style>
-  </head>
-  <body>
-    <div class="wrapper">
-      <form name="exampleForm" id="example-form" action="" method="post">
-        <div class="row">
-          <label for="firstname" class="input-text">First Name</label>
-          <input type="text" placeholder="First name *" name="firstName" id="firstname" value="">
-          <span class="firstName error-message">Please enter your first name</span>
-        </div>
-        <div class="row">
-          <label for="lastname" class="input-text">Last Name</label>
-          <input type="text" placeholder="Last name" name="lastName" id="lastname" value="">
-          <span class="lastName error-message">Please enter your last name</span>
-        </div>
-        <div class="row">
-          <label for="email" class="input-text">Email</label>
-          <input type="text" placeholder="Email Address *" name="email" id="email" value="">
-          <span class="email error-message">Please enter a valid email</span>
-        </div>
-        <div class="columns three">
-          <div class="row street-number">
-            <label for="streetNumber" class="input-text">Street Number</label>
-            <input type="text" placeholder="Street Number *" name="streetNumber" id="streetNumber" value="">
-            <span class="streetNumber error-message">Please enter your street number</span>
-          </div>
-          <div class="row street-name">
-            <label for="streetName" class="input-text">Street Name</label>
-            <input type="text" placeholder="Street Name *" name="streetName" id="streetName" value="">
-            <span class="streetName error-message">Please enter your street name</span>
-          </div>
-          <div class="row suite">
-            <label for="suite" class="input-text">Suite</label>
-            <input type="text" placeholder="Apt/Suite" name="suite" id="suite" value="">
-          </div>
-        </div>
-        <div class="columns three">
-          <div class="row">
-            <label for="city" class="input-text">City</label>
-            <input type="text" placeholder="City *" name="city" id="city" value="">
-            <span class="city error-message">Please enter your city</span>
-          </div>
-          <div class="row">
-            <label for="province" class="input-text">Province</label>
-            <select name="province" id="province">
-              <optgroup label="Provinces">
-                <option value="" disabled selected>Province/Terrority *</option>
-                <option value="AB">Alberta</option>
-                <option value="BC">British Columbia</option>
-                <option value="MB">Manitoba</option>
-                <option value="NB">New Brunswick</option>
-                <option value="NL">Newfoundland and Labrador</option>
-                <option value="NS">Nova Scotia</option>
-                <option value="ON">Ontario</option>
-                <option value="PE">Prince Edward Island</option>
-                <option value="QC">Quebec</option>
-                <option value="SK">Saskatchewan</option>
-                <option value="NT">Northwest Territories</option>
-                <option value="NU">Nunavut</option>
-                <option value="YT">Yukon</option>
-              </optgroup>
-            </select>
-            <span class="province error-message">Please enter your province</span>
-          </div>
-          <div class="row">
-            <label for="postalcode" class="input-text">Postal Code</label>
-            <input type="text" placeholder="Postal Code *" name="postalCode" id="postalcode" value="">
-            <span class="postalCode error-message">Please enter your postal code</span>
-          </div>
-        </div>
-        <div class="row">
-          <input name="checkbox" id="checkbox" type="checkbox" value="Yes">
-          <label for="checkbox">Checkbox label</label>
-          <span class="checkbox error-message">Please check the checkbox</span>
-        </div>
-        <div class="row">
-          <fieldset>
-            <legend>Radio Buttons</legend>
-            <input name="radioButton" id="radio-button-yes" type="radio" value="Yes"><label for="radio-button-yes">Yes</label><br>
-            <input name="radioButton" id="radio-button-no" type="radio" value="No"><label for="radio-button-no">No</label>
-            <span class="radioButton error-message">Please select a radio button</span>
-          </fieldset>
-        </div>
-        <div>
-          <button type="submit" name="button" class="primary">Submit</button>
-        </div>
-      </form>
-    </div>
-    <script src="//code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
-    <script src="/resources/scripts/core.js"></script>
+scripts : |
     <script>
       sandbox.core.extend('formValidation', function(){
         return {
@@ -238,5 +148,87 @@
         }
       }).init();
     </script>
-  </body>
-</html>
+---
+      <form name="exampleForm" id="example-form" action="" method="post">
+        <div class="row">
+          <label for="firstname" class="input-text">First Name</label>
+          <input type="text" placeholder="First name *" name="firstName" id="firstname" value="">
+          <span class="firstName error-message">Please enter your first name</span>
+        </div>
+        <div class="row">
+          <label for="lastname" class="input-text">Last Name</label>
+          <input type="text" placeholder="Last name" name="lastName" id="lastname" value="">
+          <span class="lastName error-message">Please enter your last name</span>
+        </div>
+        <div class="row">
+          <label for="email" class="input-text">Email</label>
+          <input type="text" placeholder="Email Address *" name="email" id="email" value="">
+          <span class="email error-message">Please enter a valid email</span>
+        </div>
+        <div class="columns three">
+          <div class="row street-number">
+            <label for="streetNumber" class="input-text">Street Number</label>
+            <input type="text" placeholder="Street Number *" name="streetNumber" id="streetNumber" value="">
+            <span class="streetNumber error-message">Please enter your street number</span>
+          </div>
+          <div class="row street-name">
+            <label for="streetName" class="input-text">Street Name</label>
+            <input type="text" placeholder="Street Name *" name="streetName" id="streetName" value="">
+            <span class="streetName error-message">Please enter your street name</span>
+          </div>
+          <div class="row suite">
+            <label for="suite" class="input-text">Suite</label>
+            <input type="text" placeholder="Apt/Suite" name="suite" id="suite" value="">
+          </div>
+        </div>
+        <div class="columns three">
+          <div class="row">
+            <label for="city" class="input-text">City</label>
+            <input type="text" placeholder="City *" name="city" id="city" value="">
+            <span class="city error-message">Please enter your city</span>
+          </div>
+          <div class="row">
+            <label for="province" class="input-text">Province</label>
+            <select name="province" id="province">
+              <optgroup label="Provinces">
+                <option value="" disabled selected>Province/Terrority *</option>
+                <option value="AB">Alberta</option>
+                <option value="BC">British Columbia</option>
+                <option value="MB">Manitoba</option>
+                <option value="NB">New Brunswick</option>
+                <option value="NL">Newfoundland and Labrador</option>
+                <option value="NS">Nova Scotia</option>
+                <option value="ON">Ontario</option>
+                <option value="PE">Prince Edward Island</option>
+                <option value="QC">Quebec</option>
+                <option value="SK">Saskatchewan</option>
+                <option value="NT">Northwest Territories</option>
+                <option value="NU">Nunavut</option>
+                <option value="YT">Yukon</option>
+              </optgroup>
+            </select>
+            <span class="province error-message">Please enter your province</span>
+          </div>
+          <div class="row">
+            <label for="postalcode" class="input-text">Postal Code</label>
+            <input type="text" placeholder="Postal Code *" name="postalCode" id="postalcode" value="">
+            <span class="postalCode error-message">Please enter your postal code</span>
+          </div>
+        </div>
+        <div class="row">
+          <input name="checkbox" id="checkbox" type="checkbox" value="Yes">
+          <label for="checkbox">Checkbox label</label>
+          <span class="checkbox error-message">Please check the checkbox</span>
+        </div>
+        <div class="row">
+          <fieldset>
+            <legend>Radio Buttons</legend>
+            <input name="radioButton" id="radio-button-yes" type="radio" value="Yes"><label for="radio-button-yes">Yes</label><br>
+            <input name="radioButton" id="radio-button-no" type="radio" value="No"><label for="radio-button-no">No</label>
+            <span class="radioButton error-message">Please select a radio button</span>
+          </fieldset>
+        </div>
+        <div>
+          <button type="submit" name="button" class="primary">Submit</button>
+        </div>
+      </form>
