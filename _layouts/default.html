@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{{ page.title }}</title>
+{% include global/head-region.html %}
+{% include global/head-stylesheets.html %}
+  </head>
+  <body>
+{{ content }}
+{% include global/scripts-region.html %}
+{{ page.scripts }}
+  </body>
+</html>
