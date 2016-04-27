@@ -1,0 +1,257 @@
+<!doctype>
+<html lang="en">
+  <head>
+    <title>Carousel</title>
+    <link href="//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <style type="text/css">
+      .mobile-carousel-container {width: 100%;padding: 20px 0;margin: 0 auto;background-color: transparent;overflow: hidden;position: relative;}
+      .mobile-carousel-items {width: 85%;min-width: 767px;margin: 0 auto;background-color: transparent;position: relative;display: -webkit-flex;display: flex;-webkit-flex-direction: row;flex-direction: row;-webkit-justify-content: flex-start;justify-content: flex-start;-webkit-align-items: stretch;align-items: stretch;}
+      .mobile-carousel-items.three > div {width: 30.333333%;}
+      .mobile-carousel-items.four > div > div {width: 24%;}
+      .mobile-carousel-items.five > div > div {width: 18%;}
+      .mobile-carousel-items.six > div {width: 15.3%;}
+      .mobile-carousel-item {margin: 0 1.5%;border:1px solid red;}
+      .mobile-carousel-controls {display: none;}
+      .mobile-carousel-chevron-control {height: 1px;display: none;}
+      html.no-touch .mobile-carousel-container {overflow: initial;}
+
+        html.touch .mobile-carousel-items {min-width: initial;left: -80%;-webkit-transition: left 0.4s;transition: left 0.4s;}
+        html.touch .mobile-carousel-items.horizontal-wrapper {margin:0;}/*override*/
+        html.touch .stroke.copy.fill.flex-row-center .cards {position:relative;}
+        html.touch .mobile-carousel-items.three {width: 260%;}
+        html.touch .mobile-carousel-items.four {width: 345%;}
+        html.touch .mobile-carousel-items.four > div {width: 23.92%;}
+        html.touch .mobile-carousel-items.four > div > div.main-wrapper.item.mobile-carousel-item {width: 100%;max-width:initial;}
+        html.touch .mobile-carousel-items.five {width: 434%;}
+        html.touch .mobile-carousel-items.five > div {width: 18.8%;}
+        html.touch .mobile-carousel-items.five > div > div.main-wrapper.item.mobile-carousel-item {width: 100%;max-width:initial;}
+        html.touch .mobile-carousel-items.six {width: 520%;}
+        html.touch .mobile-carousel-items.horizontal-wrapper .card {margin:0 0.62%;}/*override*/
+        html.touch .mobile-carousel-items > .mobile-carousel-item {margin: 0 0.666666%;}
+        html.touch .mobile-carousel-items.three > .mobile-carousel-item {width: 32%;}
+        html.touch .mobile-carousel-items.five > .mobile-carousel-item {width: 19%;}
+        html.touch .mobile-carousel-controls {display: block;margin: 15px auto 0;text-align: center;}
+        html.touch .mobile-carousel-control {height: 8px;border: 1px solid #cacaca;background-color: #cacaca;padding: 0px 4px;margin: 0 3px;border-radius: 15px;display: inline-block;-webkit-transform: scale(1);transform: scale(1);-webkit-transition: background-color 0.4s, border-color 0.4s, -webkit-transform 0.4s;transition: background-color 0.4s, border-color 0.4s, transform 0.4s;}
+        html.touch .mobile-carousel-control:first-child {margin-left: 0;}
+        html.touch .mobile-carousel-control:last-child {margin-right: 0;}
+        html.touch .mobile-carousel-control.active {background-color: #0079c1;border-color: #0079c1;-webkit-transform: scale(1.2);transform: scale(1.2);}
+        html.touch .mobile-carousel-chevron-control a {position: absolute;top: 42%;background-color: transparent;border-color: white;display: table-cell;vertical-align: middle;border-radius: 80px;line-height: 1;text-align: center;box-sizing: border-box;outline: transparent;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+        html.touch .mobile-carousel-chevron-control a .function {background-color: rgba(0, 0, 0, 0.1);border: 2px solid #cacaca;}
+        html.touch .mobile-carousel-chevron-control a:hover .function {background-color: rgba(0, 0, 0, 0.25);}
+        html.touch .mobile-carousel-chevron-control a .function .icon:before {color: white;}
+        html.touch .mobile-carousel-chevron-control .carousel-previous {left: 0;}
+        html.touch .mobile-carousel-chevron-control .carousel-next {right: 0;}
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="mobile-carousel-container">
+        <div class="mobile-carousel-items two">
+          <div class="item mobile-carousel-item">1</div>
+          <div class="item mobile-carousel-item">2</div>
+        </div>
+        <div class="mobile-carousel-controls">
+          <a href="javascript:;" class="mobile-carousel-control active"></a>
+          <a href="javascript:;" class="mobile-carousel-control"></a>
+        </div>
+        <div class="mobile-carousel-chevron-control">
+          <a href="javascript:;" class="carousel-previous mobile-carousel-previous"><span class="function"><span class="icon chevron-left"></span></span></a>
+          <a href="javascript:;" class="carousel-next mobile-carousel-next"><span class="function"><span class="icon chevron-right"></span></span></a>
+        </div>
+      </div>
+      <div class="mobile-carousel-container">
+        <div class="mobile-carousel-items three">
+          <div class="item mobile-carousel-item">1</div>
+          <div class="item mobile-carousel-item">2</div>
+          <div class="item mobile-carousel-item">3</div>
+        </div>
+        <div class="mobile-carousel-controls">
+          <a href="javascript:;" class="mobile-carousel-control"></a>
+          <a href="javascript:;" class="mobile-carousel-control active"></a>
+          <a href="javascript:;" class="mobile-carousel-control"></a>
+        </div>
+        <div class="mobile-carousel-chevron-control">
+          <a href="javascript:;" class="carousel-previous mobile-carousel-previous"><span class="function"><span class="icon chevron-left"></span></span></a>
+          <a href="javascript:;" class="carousel-next mobile-carousel-next"><span class="function"><span class="icon chevron-right"></span></span></a>
+        </div>
+      </div>
+      <div class="mobile-carousel-container">
+        <div class="mobile-carousel-items four">
+          <div class="item mobile-carousel-item">1</div>
+          <div class="item mobile-carousel-item">2</div>
+          <div class="item mobile-carousel-item">3</div>
+          <div class="item mobile-carousel-item">4</div>
+        </div>
+        <div class="mobile-carousel-controls">
+          <a href="javascript:;" class="mobile-carousel-control"></a>
+          <a href="javascript:;" class="mobile-carousel-control active"></a>
+          <a href="javascript:;" class="mobile-carousel-control"></a>
+          <a href="javascript:;" class="mobile-carousel-control"></a>
+        </div>
+        <div class="mobile-carousel-chevron-control">
+          <a href="javascript:;" class="carousel-previous mobile-carousel-previous"><span class="function"><span class="icon chevron-left"></span></span></a>
+          <a href="javascript:;" class="carousel-next mobile-carousel-next"><span class="function"><span class="icon chevron-right"></span></span></a>
+        </div>
+      </div>
+      <div class="mobile-carousel-container">
+        <div class="mobile-carousel-items five">
+          <div class="item mobile-carousel-item">1</div>
+          <div class="item mobile-carousel-item">2</div>
+          <div class="item mobile-carousel-item">3</div>
+          <div class="item mobile-carousel-item">4</div>
+          <div class="item mobile-carousel-item">5</div>
+        </div>
+        <div class="mobile-carousel-controls">
+          <a href="javascript:;" class="mobile-carousel-control"></a>
+          <a href="javascript:;" class="mobile-carousel-control"></a>
+          <a href="javascript:;" class="mobile-carousel-control active"></a>
+          <a href="javascript:;" class="mobile-carousel-control"></a>
+          <a href="javascript:;" class="mobile-carousel-control"></a>
+        </div>
+        <div class="mobile-carousel-chevron-control">
+          <a href="javascript:;" class="carousel-previous mobile-carousel-previous"><span class="function"><span class="icon chevron-left"></span></span></a>
+          <a href="javascript:;" class="carousel-next mobile-carousel-next"><span class="function"><span class="icon chevron-right"></span></span></a>
+        </div>
+      </div>
+    </div>
+    <script src="//code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+    <script src="/resources/scripts/core.js"></script>
+    <script>
+      sandbox.core.extend('mobilePlanShareCarouselUI', function(){
+        var mobileCarousel
+        return {
+          _initialize : function(){
+            this.initUI();
+          },
+          initUI : function(){
+            var self = this;
+            $(function(){
+              mobileCarousel = $('.mobile-carousel-items');
+              if (bmo.core.isViewportMobile()){
+                self.initMobileCarousel();
+              }
+              self.viewportResizeListener();
+            });
+          },
+          viewportResizeListener : function(){
+            var self = this;
+            bmo.core.onViewportResize(function(){
+              if (bmo.core.isViewportMobile()){
+                self.initMobileCarousel();
+              }else {
+                self.destroyMobileCarousel();
+              }
+            });
+          },
+          initMobileCarousel : function(){
+            var self = this;
+            mobileCarousel.each(function(){
+              var el = $(this),
+                  offsetLeft = 87, //fixed%, 7% is left for the left margin on the 0 element
+                  carouselControlEls = el.next('.mobile-carousel-controls').find('.mobile-carousel-control'),
+                  totalChildren = el.children().length - 1,
+                  currChild;
+              //set currChild as the carousel item control set as "active" in the HTML code
+              el.next('.mobile-carousel-controls').children("a").each(function( index ) {
+                if ($(this).hasClass("active")) {
+                  currChild = index;
+                }
+              });
+              var currLeft = 7 - (currChild)*87; //0=7, 1=-80, 2=-167, 3=-254, 4=-341
+              el.css('left', currLeft + '%');
+              el.on('swipeleft', function(e){ //go -> in the carousel
+                if (currChild === (totalChildren)){
+                  return;
+                }
+                currChild++;
+                currLeft = 7 - ( (currChild) * offsetLeft );
+                el.css('left', currLeft + '%');
+                carouselControlEls.removeClass('active');
+                carouselControlEls.eq(currChild).addClass('active');
+                if (navigator.userAgent.match(/Android/i)) {
+                  if (currChild === 0){
+                    el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-previous').css('display','none');
+                  }else if (currChild === (totalChildren)){
+                    el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-next').css('display','none');
+                  }else {
+                    el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-previous').css('display','block');
+                    el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-next').css('display','block');
+                  }
+                }
+              });
+              el.on('swiperight', function(e){ //go <- in the carousel
+                if (currChild === 0){
+                  return;
+                }
+                currChild--;
+                currLeft = 7 - ( (currChild) * offsetLeft );
+                el.css('left', currLeft + '%');
+                carouselControlEls.removeClass('active');
+                carouselControlEls.eq(currChild).addClass('active');
+                if (navigator.userAgent.match(/Android/i)) {
+                  if (currChild === 0){
+                    el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-previous').css('display','none');
+                  }else if (currChild === (totalChildren)){
+                    el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-next').css('display','none');
+                  }else {
+                    el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-previous').css('display','block');
+                    el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-next').css('display','block');
+                  }
+                }
+              });
+              self.carouselControlsListener(el, carouselControlEls);
+            });
+          },
+          carouselControlsListener : function(el, controls){
+            var self = this;
+            var totalChildren = el.children().length - 1;
+            controls.on('click', function(e){
+              e.preventDefault();
+              if ($(this).hasClass('active')){
+                return;
+              }
+              controls.removeClass('active');
+              $(this).addClass('active');
+              el.css('left', ( 7 - ($(this).index() * 87) ) + '%' );
+              currChild = $(this).index();
+              if (navigator.userAgent.match(/Android/i)) {
+                if (currChild === 0){
+                  el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-previous').css('display','none');
+                }else if (currChild === totalChildren){
+                  el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-next').css('display','none');
+                }else {
+                  el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-previous').css('display','block');
+                  el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-next').css('display','block');
+                }
+              }
+            });
+            if (navigator.userAgent.match(/Android/i)) {
+              $('.mobile-carousel-chevron-control').css('display','block');
+              el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-next').on('click', function(e){
+                e.preventDefault();
+                el.trigger('swipeleft');
+              });
+              el.siblings(".mobile-carousel-chevron-control").children('.mobile-carousel-previous').on('click', function(e){
+                e.preventDefault();
+                el.trigger('swiperight');
+              });
+            }
+          },
+          destroyMobileCarousel : function(){
+            mobileCarousel.each(function(){
+              var el = $(this),
+                  carouselControlEls = el.next('.mobile-carousel-controls').find('.mobile-carousel-control');
+              el.off('swipeleft');
+              el.off('swiperight');
+              $('.mobile-carousel-next').off('click');
+              $('.mobile-carousel-previous').off('click');
+              carouselControlEls.off('click');
+              el.next('.mobile-carousel-controls').next('.mobile-carousel-chevron-control').hide();
+              el.css('left', 'auto');
+            });
+          }
+        };
+      });
+    </script>
+  </body>
+</html>
