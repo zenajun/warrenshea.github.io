@@ -36,7 +36,7 @@ gulp.task('serve',['scripts'], function () {
     directory: true,
     startPath: 'index.html'
   });
-  gulp.watch(['examples/**/*.html','_includes/**/*.html','_layouts/**/*.html'], ['build-jekyll']);
+  gulp.watch(['index.html','examples/**/*.html','_includes/**/*.html','_layouts/**/*.html'], ['build-jekyll']);
 });
 
 gulp.task('default', ['sass','scripts','build','serve']);
