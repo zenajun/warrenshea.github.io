@@ -1,6 +1,6 @@
 # [warrenshea.github.io](http://warrenshea.github.io)
 
-warrenshea.github.io is the Sandbox for Warren Shea (Front-end Web Developer). This site is a Sandbox for trying new things, Code Examples, Notes, and Misc.
+warrenshea.github.io is the Sandbox for Warren Shea (Front-end Web Developer). This site is a Sandbox for trying new things and Code Examples.
 
 ## Frameworks, Tools
 
