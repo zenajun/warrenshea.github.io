@@ -1,0 +1,17 @@
+html {font-family:"lato";font-size:16px;}
+
+.top-bar {
+  background:#1E88E5;
+  ul.dropdown {
+    background:#1E88E5;
+    color:#FFF;
+    li.is-dropdown-submenu-parent > a {
+      color:#FFF;
+      &:after{
+        border-color:#FFF transparent transparent;
+      }
+    }
+  }
+}
+
+h1 {text-shadow:2px 2px 3px #ccc;}

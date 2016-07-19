@@ -4,11 +4,16 @@
     <title>{{ page.title }}</title>
 {% include global/head-region.html %}
 {% include global/head-stylesheets.html %}
+{% if page.css_resources != '' %}{% for css_source in page.css_resources %}
+    <link href="{{css_source}}" rel="stylesheet">
+{% endfor %}{% endif %}
   </head>
   <body>
 {% include global/navigation.html %}
 {{ content }}
 {% include global/scripts-region.html %}
-{{ page.scripts }}
+{% if page.js_resources != '' %}{% for js_source in page.js_resources %}
+    <script src="{{js_source}}"></script>
+{% endfor %}{% endif %}
   </body>
 </html>
