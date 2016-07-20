@@ -1,0 +1,44 @@
+%full-width {
+  width: 100%;
+}
+.full-width{
+  @extend %full-width;
+}
+
+%transition {
+  transition-duration:0.2s;
+}
+.transition{
+  @extend %transition;
+}
+
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-row-center {
+  @extend .flex-row;
+  justify-content: center;
+}
+.flex-row-between {
+  @extend .flex-row;
+  justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-col-center {
+  @extend .flex-col;
+  align-items: center;
+}
+.flex-col-between {
+  @extend .flex-col;
+  align-content: space-between;
+}
+
+.tabindex-first:focus {
+  outline:none;
+}

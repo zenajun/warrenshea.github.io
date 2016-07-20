@@ -4,7 +4,7 @@ title: warrenshea.github.io Sandbox and Code Examples
 keywords: Warren Shea
 description: warren shea, warrenshea, sandbox, examples
 css_resources:
-- "//cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css"
+- "//cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation-flex.min.css"
 - "/resources/stylesheets/core.css"
 - "/resources/stylesheets/home.css"
 js_resources:
@@ -12,62 +12,81 @@ js_resources:
 - "/resources/scripts/core.js"
 ---
     <div class="home">
+
       <div class="row">
         <h1 class="large-12 large-centered">warrenshea.github.io</h1>
       </div>
 
-      <div class="row">
-        <h2>Sandbox</h2>
-      </div>
+      <h2 class="row">Code examples</h2>
       <div class="row small-up-1 medium-up-2 large-up-3 large-collapse" data-equalizer data-equalize-on="medium">
         <div class="columns">
-          <div class="card" data-equalizer-watch>
-            <div class="title"><h3>A JavaScript Framework example</h3></div>
-            <small class="date">Added July 20, 2016</small>
-            <div class="blurb">An example of a JavaScript framework structure.</div>
-            <div class="code"><a href="http://codepen.io/warrenshea/pen/mExbdd" target="_blank">Tweak the code on CodePen</a></div>
+          <div class="card">
+            <div data-equalizer-watch>
+              <div class="title"><h3>Form Validation</h3></div>
+              <div class="blurb">A simple form validation. 0 WCAG 2.0 A and AA errors.</div>
+            </div>
+            <ul class="code">
+              <li><a href="examples/form-validation.html">See the example</a></li>
+              <li><a href="http://codepen.io/warrenshea/pen/QNBGwx" target="_blank">Tweak the code on CodePen</a></li>
+            </ul>
           </div>
         </div>
         <div class="columns">
-          <div class="card" data-equalizer-watch>
-            <div class="title"><h3>A(nother) JavaScript Framework example</h3></div>
-            <small class="date">Added July 21, 2016</small>
-            <div class="blurb">An example of a JavaScript framework structure.</div>
-            <div class="code"><a href="http://codepen.io/warrenshea/pen/mExbdd" target="_blank">Tweak the code on CodePen</a></div>
+          <div class="card">
+            <div data-equalizer-watch>
+              <div class="title"><h3>Sticky Navigation</h3></div>
+              <div class="blurb">A simple sticky navigation. 0 WCAG 2.0 A and AA errors.</div>
+            </div>
+            <ul class="code">
+              <li><a href="examples/sticky-navigation-flex-table.html">See the example</a></li>
+              <li><a href="http://codepen.io/warrenshea/pen/ZWjpPm" target="_blank">Tweak the code on CodePen</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="card">
+            <div data-equalizer-watch>
+              <div class="title"><h3>Carousel</h3></div>
+              <div class="blurb">A mix of carousels. 0 WCAG 2.0 A and AA errors.</div>
+            </div>
+            <ul class="code">
+              <li><a href="examples/carousel.html">See the example</a></li>
+              <li><a href="http://codepen.io/warrenshea/pen/jqvQjb" target="_blank">Tweak the code on CodePen</a></li>
+            </ul>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <h2>Code examples</h2>
-      </div>
+      <h2 class="row">Sandbox</h2>
       <div class="row small-up-1 medium-up-2 large-up-3 large-collapse" data-equalizer data-equalize-on="medium">
         <div class="columns">
-          <div class="card" data-equalizer-watch>
-            <div class="title"><h3>Form Validation</h3></div>
-            <small class="date">May 1, 2016</small>
-            <div class="blurb">A simple form validation. 0 WCAG 2.0 A and AA errors.</div>
-            <div class="code"><a href="examples/form-validation.html">See the example</a></div>
-            <div class="codepen"><a href="http://codepen.io/warrenshea/pen/QNBGwx" target="_blank">Tweak the code on CodePen</a></div>
+          <div class="card">
+            <div data-equalizer-watch>
+              <div class="title"><h3>A JavaScript Framework example</h3></div>
+              <div class="blurb">
+                <p>An example of a JavaScript framework structure.</p>
+                <p>Allows modules to be namespaced with simple initialize and document.ready() functions.</p>
+              </div>
+            </div>
+            <ul class="code">
+              <li><a href="http://codepen.io/warrenshea/pen/mExbdd" target="_blank">Tweak the code on CodePen</a></li>
+            </ul>
           </div>
         </div>
         <div class="columns">
-          <div class="card" data-equalizer-watch>
-            <div class="title"><h3>Sticky Navigation</h3></div>
-            <small class="date">May 1, 2016</small>
-            <div class="blurb">A simple sticky navigation. 0 WCAG 2.0 A and AA errors.</div>
-            <div class="code"><a href="examples/sticky-navigation-flex-table.html">See the example</a></div>
-            <div class="codepen"><a href="http://codepen.io/warrenshea/pen/ZWjpPm" target="_blank">Tweak the code on CodePen</a></div>
-          </div>
-        </div>
-        <div class="columns">
-          <div class="card" data-equalizer-watch>
-            <div class="title"><h3>Carousel</h3></div>
-            <small class="date">May 1, 2016</small>
-            <div class="blurb">A mix of carousels. 0 WCAG 2.0 A and AA errors.</div>
-            <div class="code"><a href="examples/carousel.html">See the example</a></div>
-            <div class="codepen"><a href="http://codepen.io/warrenshea/pen/jqvQjb" target="_blank">Tweak the code on CodePen</a></div>
+          <div class="card">
+            <div data-equalizer-watch>
+              <div class="title"><h3>A JavaScript Framework example</h3></div>
+              <div class="blurb">
+                <p>An example of a JavaScript framework structure.</p>
+                <p>Allows modules to be namespaced and extended.</p>
+              </div>
+            </div>
+            <ul class="code">
+              <li><a href="http://codepen.io/warrenshea/pen/LkdRoX" target="_blank">Tweak the code on CodePen</a></li>
+            </ul>
           </div>
         </div>
       </div>
+
     </div>
