@@ -1,0 +1,21 @@
+.home .columns {
+  padding: 0 0.5rem; }
+  .home .columns .card {
+    border: 1px solid #EEE;
+    background: #fff;
+    position: relative;
+    box-shadow: 2px 2px 3px #DEDEDE;
+    margin-bottom: 1rem; }
+    .home .columns .card .title {
+      padding: 0 0.5rem;
+      background: #0097A7;
+      color: #FFF; }
+    .home .columns .card .date {
+      padding: 0 0.5rem; }
+    .home .columns .card .blurb {
+      padding: 0.5rem; }
+    .home .columns .card .code {
+      border-top: 1px solid #EEE;
+      padding: 0.5rem; }
+    .home .columns .card .codepen {
+      padding: 0.5rem; }

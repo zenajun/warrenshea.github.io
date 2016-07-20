@@ -1,5 +1,31 @@
 .home {
-  .column {
-    border:1px solid #EEEEEE;
+  .columns {
+    padding:0 0.5rem;
+    .card {
+      border:1px solid #EEE;
+      background:#fff;
+      position:relative;
+      box-shadow:2px 2px 3px #DEDEDE;
+      margin-bottom:1rem;
+      .title {
+        padding:0 0.5rem;
+        background:#0097A7;
+        color:#FFF;
+      }
+      .date {
+        padding:0 0.5rem;
+      }
+      .blurb {
+        padding:0.5rem;
+
+      }
+      .code {
+        border-top:1px solid #EEE;
+        padding:0.5rem;
+      }
+      .codepen {
+        padding:0.5rem;
+      }
+    }
   }
 }
