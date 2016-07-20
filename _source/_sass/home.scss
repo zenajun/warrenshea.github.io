@@ -1,30 +1,52 @@
+
+@import "_shared.mixins.scss";
+
 .home {
+  padding:0 1rem;
   .columns {
+    margin:0 0 1rem;
     padding:0 0.5rem;
     .card {
-      border:1px solid #EEE;
+      border:1px solid #dedede;
       background:#fff;
       position:relative;
-      box-shadow:2px 2px 3px #DEDEDE;
-      margin-bottom:1rem;
+      @include bp(medium-and-larger) {
+        box-shadow:2px 2px 3px #dedede;
+        display:flex;
+        flex-direction:column;
+      }
       .title {
-        padding:0 0.5rem;
+        padding:0 1rem;
         background:#0097A7;
         color:#FFF;
-      }
-      .date {
-        padding:0 0.5rem;
+        @include bp(medium-and-larger) {
+          position:relative;
+          height:5rem;
+        }
+        h3 {
+          margin:0;
+          padding:0.5rem 0;
+          @include bp(medium-and-larger) {
+            line-height:2rem;
+            position:absolute;
+            bottom:0;
+          }
+        }
       }
       .blurb {
-        padding:0.5rem;
-
+        padding:0.5rem 1rem;
+        @include bp(medium-and-larger) {
+          padding:1rem;
+        }
       }
       .code {
-        border-top:1px solid #EEE;
-        padding:0.5rem;
-      }
-      .codepen {
-        padding:0.5rem;
+        margin:0;
+        border-top:1px solid #dedede;
+        background:#f9f9f9;
+        padding:0.5rem 1rem;
+        li {
+          list-style:none;
+        }
       }
     }
   }

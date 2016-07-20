@@ -1,0 +1,35 @@
+@mixin rounded($radius) {
+  border-radius: $radius;
+}
+@mixin bp($break-point) {
+  $bp-small-end: 39.9375em;
+  $bp-medium-start: 40em;
+  $bp-medium-end: 63.9375em;
+  $bp-large-start: 64em;
+  $bp-large-end: 74.9375em;
+  @if $break-point == small-only {
+    @media screen and (max-width: #{$bp-small-end}) {
+      @content;
+    }
+  }
+  @if $break-point == medium-and-larger {
+    @media screen and (min-width: #{$bp-medium-start}) {
+      @content;
+    }
+  }
+  @if $break-point == medium-only {
+    @media screen and (min-width: #{$bp-medium-start}) and (max-width: #{$bp-medium-end}) {
+      @content;
+    }
+  }
+  @if $break-point == large-and-larger {
+    @media screen and (min-width: #{$bp-large-start}) {
+      @content;
+    }
+  }
+  @if $break-point == large-only {
+    @media screen and (min-width: #{$bp-large-start}) and (max-width: #{$bp-large-end}) {
+      @content;
+    }
+  }
+}

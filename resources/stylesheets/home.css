@@ -1,21 +1,46 @@
-.home .columns {
-  padding: 0 0.5rem; }
-  .home .columns .card {
-    border: 1px solid #EEE;
-    background: #fff;
-    position: relative;
-    box-shadow: 2px 2px 3px #DEDEDE;
-    margin-bottom: 1rem; }
-    .home .columns .card .title {
-      padding: 0 0.5rem;
-      background: #0097A7;
-      color: #FFF; }
-    .home .columns .card .date {
-      padding: 0 0.5rem; }
-    .home .columns .card .blurb {
-      padding: 0.5rem; }
-    .home .columns .card .code {
-      border-top: 1px solid #EEE;
-      padding: 0.5rem; }
-    .home .columns .card .codepen {
-      padding: 0.5rem; }
+.home {
+  padding: 0 1rem; }
+  .home .columns {
+    margin: 0 0 1rem;
+    padding: 0 0.5rem; }
+    .home .columns .card {
+      border: 1px solid #dedede;
+      background: #fff;
+      position: relative; }
+      @media screen and (min-width: 40em) {
+        .home .columns .card {
+          box-shadow: 2px 2px 3px #dedede;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column; } }
+      .home .columns .card .title {
+        padding: 0 1rem;
+        background: #0097A7;
+        color: #FFF; }
+        @media screen and (min-width: 40em) {
+          .home .columns .card .title {
+            position: relative;
+            height: 5rem; } }
+        .home .columns .card .title h3 {
+          margin: 0;
+          padding: 0.5rem 0; }
+          @media screen and (min-width: 40em) {
+            .home .columns .card .title h3 {
+              line-height: 2rem;
+              position: absolute;
+              bottom: 0; } }
+      .home .columns .card .blurb {
+        padding: 0.5rem 1rem; }
+        @media screen and (min-width: 40em) {
+          .home .columns .card .blurb {
+            padding: 1rem; } }
+      .home .columns .card .code {
+        margin: 0;
+        border-top: 1px solid #dedede;
+        background: #f9f9f9;
+        padding: 0.5rem 1rem; }
+        .home .columns .card .code li {
+          list-style: none; }
