@@ -1,23 +1,29 @@
-
-@import "_shared.mixins.scss";
+@import "shared.colors";
+@import "shared.mixins";
 
 .home {
   padding:0 1rem;
+  h2 {
+    @include bp(medium-and-larger) {
+      margin-top:2rem;
+      text-shadow:3px 3px 3px $text-shadow-color;
+    }
+  }
   .columns {
     margin:0 0 1rem;
     padding:0 0.5rem;
     .card {
-      border:1px solid #dedede;
+      border:1px solid $border-color;
       background:#fff;
       position:relative;
       @include bp(medium-and-larger) {
-        box-shadow:2px 2px 3px #dedede;
+        box-shadow:2px 2px 3px $text-shadow-color;
         display:flex;
         flex-direction:column;
+        margin-bottom:1rem;
       }
       .title {
         padding:0 1rem;
-        background:#0097A7;
         color:#FFF;
         @include bp(medium-and-larger) {
           position:relative;
@@ -25,12 +31,28 @@
         }
         h3 {
           margin:0;
-          padding:0.5rem 0;
+          padding:0.2rem 0 0.3rem;
           @include bp(medium-and-larger) {
+            padding:0 0 0.5rem;
             line-height:2rem;
             position:absolute;
             bottom:0;
           }
+        }
+        &.js {
+          background: linear-gradient(105deg, $language-javascript-dark $language-start,$language-javascript-dark $language-mid, $language-javascript-light $language-mid, $language-javascript-light $language-end);
+        }
+        &.html {
+          background: linear-gradient(105deg, $language-html-dark $language-start, $language-html-dark $language-mid, $language-html-light $language-mid, $language-html-light $language-end);
+        }
+        &.css {
+          background: linear-gradient(105deg, $language-css-dark $language-start, $language-css-dark $language-mid, $language-css-light $language-mid, $language-css-light $language-end);
+        }
+        &.angular {
+          background: linear-gradient(105deg, $language-angular-dark $language-start, $language-angular-dark $language-mid, $language-angular-light $language-mid, $language-angular-light $language-end);
+        }
+        &.react {
+          background: linear-gradient(105deg, $language-react-dark $language-start, $language-react-dark $language-mid, $language-react-light $language-mid, $language-react-light $language-end);
         }
       }
       .blurb {
@@ -41,8 +63,8 @@
       }
       .code {
         margin:0;
-        border-top:1px solid #dedede;
-        background:#f9f9f9;
+        border-top:1px solid $border-color;
+        background:$card-code-backgroudn-color;
         padding:0.5rem 1rem;
         li {
           list-style:none;

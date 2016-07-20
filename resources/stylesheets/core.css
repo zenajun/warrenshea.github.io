@@ -46,30 +46,33 @@
 
 html {
   font-family: "lato";
-  font-size: 16px; }
+  font-size: 16px;
+  color: #444; }
 
 body {
-  background: #f0f0f0; }
+  background: #eee; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "play";
   font-style: italic; }
 
-.top-bar {
-  background: #1E88E5; }
-  .top-bar ul.dropdown {
-    background: #1E88E5;
-    color: #FFF; }
-    .top-bar ul.dropdown li.is-dropdown-submenu-parent > a {
-      color: #FFF; }
-      .top-bar ul.dropdown li.is-dropdown-submenu-parent > a:after {
-        border-color: #FFF transparent transparent; }
+@media screen and (min-width: 40em) {
+  .top-bar {
+    background: #5C6BC0; }
+    .top-bar ul.dropdown {
+      background: #5C6BC0;
+      color: #fff; }
+      .top-bar ul.dropdown li.is-dropdown-submenu-parent > a {
+        color: #fff; }
+        .top-bar ul.dropdown li.is-dropdown-submenu-parent > a:after {
+          border-color: #fff transparent transparent; } }
 
 h1 {
-  font-weight: bold;
-  text-shadow: 2px 2px 3px #DEDEDE;
-  font-style: normal;
-  margin: 1rem 0 0; }
-
-h2 {
-  margin-top: 2rem; }
+  visibility: hidden; }
+  @media screen and (min-width: 40em) {
+    h1 {
+      visibility: visible;
+      font-weight: bold;
+      text-shadow: 2px 2px 3px #DEDEDE;
+      font-style: normal;
+      margin: 1rem 0 0; } }

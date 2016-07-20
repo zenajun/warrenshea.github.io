@@ -1,25 +1,32 @@
-$background: #efefef;
+//https://www.materialui.co/colors
+$background: #eee; //grey 200
+$font-color: #444; //black
+$white: #fff; //white
+$grey: #eee; //grey
 
-$primary-bmo-color: #0079c1;
-$primary-dark-bmo-color: #00436c;
+$navigation-background: #5C6BC0; //indigo 400
+$border-color: #DEDEDE; //grey
 
-$light-border-color: #cacaca;
-$border-divider: #cacaca;
-$border-checkbox: #aaaaaa;
+$text-shadow-color: #DEDEDE; //grey
 
-$light-font-color: #757575;
-$dark-font-color: #333333;
+$card-title-background-color: #0097A7; //teal 300
+$card-code-backgroudn-color: #F5F5F5; //grey 100
 
-$blue-dark-color: #00436c;
-$compare-header-color: #f2f2f2;
-$error-color: #d40c13;
-$underline-color: #ed1c24;
-$button-row-color: #E3EDF3;
-$card-border-color: rgba(0,0,0,0.2);
-$border-radius: 5px;
-$primary-border: 1px solid $light-border-color;
+$language-javascript-light: #e6c61d;
+$language-javascript-dark: #e5a32b;
 
+$language-html-light: #f1662b;
+$language-html-dark: #e45028;
 
-$highlighted-cell-color: rgba(227,237,243,0.6);
-$highlighted-cell-icon-tranperancy: rgba(255, 255, 255, 0.0);
-$highlighted-cell-color-icon: linear-gradient(to bottom,  white 57%, $highlighted-cell-icon-tranperancy 57%);
+$language-css-light: #28a9e0;
+$language-css-dark: #0873b9;
+
+$language-angular-light: #e62a39;
+$language-angular-dark: #b92933;
+
+$language-react-light: #61dafb;
+$language-react-dark: #222222;
+
+$language-start: 0;
+$language-mid: 93%;
+$language-end: 100%;
