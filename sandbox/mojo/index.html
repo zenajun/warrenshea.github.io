@@ -1,5 +1,5 @@
 <style>
-  .mojo {position:absolute;top:0;left:0;width:250px;background:#FFF;}
+  .mojo {position:absolute;top:0;left:0;width:250px;height:100%;background:#FFF;}
 </style>
 <div class="mojo">
   test
@@ -7,9 +7,17 @@
 
 <script>
 /*
-  var mojo = document.createElement("div").id = "mojo";
-  document.getElementByTagName("body").appendChild(mojo);
-  document.getElementById("mojo").innerHTML='<object type="text/html" data="http://warrenshea.github.io/sandbox/mojo/index.html" ></object>';
-  $("body").css({"transform":"translateX(250px)"});
+function mojo() {
+  var mojo = document.createElement("div");
+  mojo.id = "mojoContainer";
+  document.body.appendChild(mojo);
+  document.getElementById("mojoContainer").innerHTML='<object type="text/html" data="http://warrenshea.github.io/sandbox/mojo/index.html" ></object>';
+  document.body.style.transform = "translateX(250px)";
+  document.getElementById("mojoContainer").style.position = "absolute";
+  document.getElementById("mojoContainer").style.top = "0px";
+  document.getElementById("mojoContainer").style.left = "-250px";
+  return false;
+}
+mojo();
 */
 </script>
