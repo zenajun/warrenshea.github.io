@@ -11,11 +11,13 @@ function mojo() {
   var mojo = document.createElement("div");
   mojo.id = "mojoContainer";
   document.body.appendChild(mojo);
-  document.getElementById("mojoContainer").innerHTML='<object type="text/html" data="http://warrenshea.github.io/sandbox/mojo/index.html" ></object>';
+  document.getElementById("mojoContainer").innerHTML='<object id="frame" type="text/html" data="http://warrenshea.github.io/sandbox/mojo/index.html" ></object>';
   document.body.style.transform = "translateX(250px)";
   document.getElementById("mojoContainer").style.position = "absolute";
   document.getElementById("mojoContainer").style.top = "0px";
   document.getElementById("mojoContainer").style.left = "-250px";
+  document.getElementById("mojoContainer").style.height = "100%";
+  document.getElementById("frame").style.height = "100%";
   return false;
 }
 mojo();
