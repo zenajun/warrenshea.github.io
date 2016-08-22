@@ -25,11 +25,10 @@
       (function() {
         'use strict';
         $("#copy").on("click",function() {
-          copy(this);
+          copy();
         });
         //document.body.addEventListener('click', copy, true);
         function copy(e) {
-          alert('test');
           var
             t = e.target,
             c = t.dataset.copytarget,
