@@ -1,28 +1,31 @@
 <!doctype html>
 <html id="mojo">
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <style>
+      * {font-family:"Lato";border:0;padding:0;margin:0;overflow:hidden;}
       #mojo .mojo {position:absolute;top:0;left:0;width:250px;height:100%;background:#FFF;}
-      #mojo, #mojo body{border:0;padding:0;margin:0;}
-      iframe frame{border:0;}
     </style>
   </head>
   <body>
     <div class="mojo">
       <h2>Rally ShortURL</h2>
-      http://rally1.rallydev.com/#/search?keywords=US
-      Copy New Window
+      http://rally1.rallydev.com/#/search?keywords=US<br>
+      <a href="">Copy</a> <a href="">New Window</a>
+      <!--document.execCommand('copy')-->
     </div>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
   </body>
 </html>
 
-document.execCommand('copy')
+
 
 <script>
 /*
+javascript:
+var mojo,closeButton;
 function mojo() {
-  var mojo = document.createElement("div");
+  mojo = document.createElement("div");
   mojo.id = "mojoContainer";
   document.body.appendChild(mojo);
   document.getElementById("mojoContainer").innerHTML='<iframe id="frame" src="http://warrenshea.github.io/sandbox/mojo/index.html"></iframe>';
@@ -32,8 +35,26 @@ function mojo() {
   document.getElementById("mojoContainer").style.left = "-250px";
   document.getElementById("mojoContainer").style.height = "100%";
   document.getElementById("frame").style.height = "100%";
+  document.getElementById("frame").style.width = "250px";
+  document.getElementById("frame").style.border = "0px";
   return false;
 }
+function addClose() {
+  closeButton = document.createElement("div");
+  closeButton.id = "closeButton";
+  document.body.appendChild(closeButton);
+  document.getElementById("closeButton").innerHTML='<a href="javascript:closeMojo();">&times;</a>';
+  document.getElementById("closeButton").style.position = "absolute";
+  document.getElementById("closeButton").style.top = "5px";
+  document.getElementById("closeButton").style.left = "-18px";
+  return false;
+}
+function closeMojo() { 
+  document.body.removeChild(mojo);
+  document.body.removeChild(closeButton);
+  document.body.style.transform = "none";
+}
 mojo();
+addClose();
 */
 </script>
