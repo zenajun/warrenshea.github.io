@@ -11,7 +11,7 @@
     <div class="mojo">
       <h2>Rally ShortURL</h2>
       https://rally1.rallydev.com/#/search?keywords=US<br>
-      <a href="" data-copytarget="#rally">Copy</a> <a href="">New Window</a>
+      <a id="copy">Copy</a> <a href="">New Window</a>
 
       Rally URL
       Toggle
@@ -24,8 +24,8 @@
     <script>
       (function() {
         'use strict';
-        $("[data-copytarget=#rally]").on("click",function() {
-          copy(this);
+        $("#copy").on("click",function() {
+          copy();
         });
         //document.body.addEventListener('click', copy, true);
         function copy(e) {
