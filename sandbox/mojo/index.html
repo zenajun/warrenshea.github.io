@@ -10,8 +10,8 @@
   <body>
     <div class="mojo">
       <h2>Rally ShortURL</h2>
-      https://rally1.rallydev.com/#/search?keywords=US<br>
-      <a id="copy">Copy</a> <a href="">New Window</a>
+      <input class="copyValue" value="https://rally1.rallydev.com/#/search?keywords=US"><br>
+      <a herf="javascript:;" class="copyTrigger">Copy</a> <a href="">New Window</a>
 
       Rally URL
       Toggle
@@ -24,15 +24,12 @@
     <script>
       (function() {
         'use strict';
-        $("#copy").on("click",function() {
-          copy();
+        $(".copyTrigger").on("click",function() {
+          copy(this);
         });
         //document.body.addEventListener('click', copy, true);
-        function copy(e) {
-          var
-            t = e.target,
-            c = t.dataset.copytarget,
-            inp = (c ? document.querySelector(c) : null);
+        function copy(el) {
+          var inp = $(el).siblings(".copyValue");
           if (inp && inp.select) {
             inp.select();
             try {
