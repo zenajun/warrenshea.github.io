@@ -1,0 +1,30 @@
+---
+layout: examples
+title: Carousel
+stylesheets : |
+    <style type="text/css">
+    </style>
+scripts : |
+    <script>
+      var invite = {
+        date: "",
+        subject: "test",
+        full: "description"
+
+      }
+      sandbox.core.extend('calendar', function(){
+        return {
+          init : function(){
+          },
+          add : function(type,details) {
+            alert(type,details);
+          }
+        };
+      }).init();
+    </script>
+---
+      <h2>Calendar Invite</h2>
+      <a href="javasacript:sandbox.core.calendar.add('outlook',invite);">Outlook</a><br>
+      <a href="javasacript:sandbox.core.calendar.add('google',invite);">Google Calendar</a><br>
+      <a href="javasacript:sandbox.core.calendar.add('apple',invite);">Apple</a><br>
+      <a href="javasacript:sandbox.core.calendar.add('yahoo',invite);">Yahoo</a><br>
