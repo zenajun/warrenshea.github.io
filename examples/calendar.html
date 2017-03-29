@@ -1,6 +1,6 @@
 ---
 layout: examples
-title: Carousel
+title: Calendar
 stylesheets : |
     <style type="text/css">
     </style>
@@ -66,26 +66,68 @@ scripts : |
         };
       })(jQuery, window, document);
       sandbox.core.run();
-    
-      var invite = {
-        date: "",
-        subject: "test",
-        full: "description"
 
+      String.prototype.replaceAll = function(search, replacement) {
+        var target = this;
+        return target.split(search).join(replacement);
+      };
+
+      //add 4 hours to event
+      var invite = {
+        start_date:"2014-05-04",
+        start_time:"13:00:00",
+        end_date:"2014-05-04",
+        end_time:"21:00:00",
+        timezone:"Europe/London",
+        title:"Star Wars Day Party",
+        description:"May the force be with you",
+        location:"Tatooine",
+        organizer:"Luke Skywalker",
+        organizer_email:"luke@starwars.com"
       }
+      //%0A = <br>
       sandbox.core.extend('calendar', function(){
+
+        function formatDate(date){
+          var date = date.replaceAll("-","");
+          date = date.replaceAll(" ","T");
+          date = date.replaceAll(":","");
+          return date;
+        }
         return {
           init : function(){
           },
           add : function(type,details) {
-            alert(type,details);
-          }
+            if (type=="google") {
+              var start_date = details.start_date.replaceAll("-","");
+              var start_time = details.start_time.replaceAll(":","");
+              var end_date = details.end_date.replaceAll("-","");
+              var end_time = details.end_time.replaceAll(":","");
+              console.log("https://calendar.google.com/calendar/render?action=TEMPLATE&dates=" + start_date + "T" + start_time + "Z/" + end_date + "T" + end_time + "Z&location=" + encodeURIComponent(details.location) + "&text=" + encodeURIComponent(details.title) + "&details=" + encodeURIComponent(details.description));
+              //console.log("https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20140504T110000Z/20140504T170000Z&location=Tatooine&text=Star+Wars+Day+Party&details=May+the+force+be+with+you");
+            } else if (type=="outlook") {
+              var start_date = details.start_date.replaceAll("-","");
+              var end_date = details.end_date.replaceAll("-","");
+              console.log("https://outlook.live.com/owa/?rru=addevent&startdt=" + start_date + "T" + details.start_time + "Z&enddt=" + end_date + "T" + end_time + "Z&subject=" + encodeURIComponent(details.title) + "&location=" + encodeURIComponent(details.location) + "&body=" + encodeURIComponent(details.description) + "&allday=false&path=/calendar/view/Month");
+              //console.log("https://outlook.live.com/owa/?rru=addevent&startdt=20140504T11:00:00Z&enddt=20140504T17:00:00Z&subject=Star+Wars+Day+Party&location=Tatooine&body=May+the+force+be+with+you%0A%0A--%0Ahttp%3A%2F%2Fgo.addtocalendar.com&allday=false&uid=support@addtocalendar.com&path=/calendar/view/Month");
+            } else if (type=="yahoo") {
+              var start_date = details.start_date.replaceAll("-","");
+              var start_time = details.start_time.replaceAll(":","");
+              var end_date = details.end_date.replaceAll("-","");
+              var end_time = details.end_time.replaceAll(":","");
+              console.log("http://calendar.yahoo.com/?st=" + start_date + "T" + start_time + "Z&et=" + end_date + "T" + end_time + "Z&view=d&v=60&type=20&title=" + encodeURIComponent(details.title) + "&in_loc=" + encodeURIComponent(details.location) + "&desc=" + encodeURIComponent(details.description));
+              //console.log("http://calendar.yahoo.com/?st=20170504T110000Z&et=20170504T170000Z&view=d&v=60&type=20&title=Star+Wars+Day+Party&in_loc=Tatooine&desc=May+the+force+be+with+you%0A%0A--%0Ahttp%3A%2F%2Fgo.addtocalendar.com");
+            }
+
+
+            //alert(type + ", " + details.date + ", " + details.subject + ", " + details.full);
+          } 
         };
       }).init();
     </script>
 ---
       <h2>Calendar Invite</h2>
-      <a href="javasacript:sandbox.core.calendar.add('outlook',invite);">Outlook</a><br>
-      <a href="javasacript:sandbox.core.calendar.add('google',invite);">Google Calendar</a><br>
-      <a href="javasacript:sandbox.core.calendar.add('apple',invite);">Apple</a><br>
-      <a href="javasacript:sandbox.core.calendar.add('yahoo',invite);">Yahoo</a><br>
+      <a href="javasacript:;" onclick="sandbox.calendar.add('outlook',invite);">Outlook</a><br>
+      <a href="javasacript:;" onclick="sandbox.calendar.add('google',invite);">Google Calendar</a><br>
+      <a href="javasacript:;" onclick="sandbox.calendar.add('apple',invite);">Apple</a><br>
+      <a href="javasacript:;" onclick="sandbox.calendar.add('yahoo',invite);">Yahoo</a><br>
