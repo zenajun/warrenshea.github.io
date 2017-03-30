@@ -3,28 +3,31 @@ layout: examples
 title: Form Validation
 stylesheets : |
     <style type="text/css">
+      *{font-family:"lato";}
       /*Cosmetic CSS*/
       .wrapper {margin:50px auto 0;width:100%;max-width:1200px}
-      #example-form input[type="text"].error, #example-form .error {border:1px solid red}
-      #example-form .error-message {display:none}
-      #example-form .error-message.active {display:block;color:red}
-      #example-form .row {padding-bottom:20px;overflow:hidden}
-      #example-form .columns.three > div {float:left;margin-right:1%;width:32.667%}
-      #example-form .columns > div:last-child {margin-right:0}
-      #example-form .columns.three {overflow:auto}
-      #example-form .columns.three .row.street-number {width:23%}
-      #example-form .columns.three .row.street-name {width:60%}
-      #example-form .columns.three .row.suite {width:15%}
-      #example-form label.input-text {overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(0,0,0,0);margin:-1px;padding:0;top:-500px}
-      #example-form input[type="text"], #example-form select {margin-bottom:3px}
-      #example-form input[type="text"]::-webkit-input-placeholder {color:#444}
-      #example-form input[type="text"] {width:100%;padding:7px 8px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;line-height:1.4em}
-      #example-form select {width:100%;padding:7px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;appearance:none;overflow-wrap:initial}
-      #example-form input[type="checkbox"] + label {padding-left:2%}
-      #example-form input[type="radio"] + label {padding-left:2%}
+      form[name="example-form"] input[type="text"].error,
+      form[name="example-form"] .error {border:1px solid red}
+      form[name="example-form"] .error-message {display:none}
+      form[name="example-form"] .error-message.active {display:block;color:red}
+      form[name="example-form"] .row {padding-bottom:20px;overflow:hidden}
+      form[name="example-form"] .columns.three > div {float:left;margin-right:1%;width:32.667%}
+      form[name="example-form"] .columns > div:last-child {margin-right:0}
+      form[name="example-form"] .columns.three {overflow:auto}
+      form[name="example-form"] .columns.three .row.street-number {width:23%}
+      form[name="example-form"] .columns.three .row.street-name {width:60%}
+      form[name="example-form"] .columns.three .row.suite {width:15%}
+      form[name="example-form"] label.input-text {overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(0,0,0,0);margin:-1px;padding:0;top:-500px}
+      form[name="example-form"] input[type="text"],
+      form[name="example-form"] select {margin-bottom:3px}
+      form[name="example-form"] input[type="text"]::-webkit-input-placeholder {color:#444}
+      form[name="example-form"] input[type="text"] {width:100%;padding:7px 8px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;line-height:1.4em}
+      form[name="example-form"] select {width:100%;padding:7px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;appearance:none;overflow-wrap:initial}
+      form[name="example-form"] input[type="checkbox"] + label {padding-left:2%}
+      form[name="example-form"] input[type="radio"] + label {padding-left:2%}
     </style>
 js_resources:
-- "/resources/scripts/core.js"
+- "scripts/core.js"
 scripts : |
     <script>
       sandbox.core.extend('formValidation', function(){
@@ -95,10 +98,7 @@ scripts : |
       sandbox.core.extend("exampleForm", function() {
         var errormessage = "";
         return {
-          init: function() {
-            this.initUI();
-          },
-          initUI: function() {
+          _ready: function(){
             var self = this;
             $(function() {
               self.submitListener();
@@ -140,7 +140,7 @@ scripts : |
           },
           submitListener: function() {
             var self = this;
-            $('#example-form').submit(function(ev) {
+            $('form[name=example-form]').submit(function(ev) {
               ev.preventDefault(); // to stop the form from submitting
               if (self.validateForm()) { // if all the validations succeeded
                 this.submit();
@@ -148,10 +148,10 @@ scripts : |
             });
           }
         }
-      }).init();
+      });
     </script>
 ---
-      <form name="exampleForm" id="example-form" action="" method="post">
+      <form name="example-form" action="" method="post">
         <div class="row">
           <label for="firstname" class="input-text">First Name</label>
           <input type="text" placeholder="First name *" name="firstName" id="firstname" value="">
