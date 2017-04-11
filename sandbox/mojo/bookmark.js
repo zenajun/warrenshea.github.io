@@ -22,5 +22,5 @@ javascript:(function() {
   var options={
     path:'//squizlabs.github.io/HTML_CodeSniffer/build/'
   };
-  _i('//squizlabs.github.io/HTML_CodeSniffer/build/HTMLCS.js',function(){HTMLCSAuditor.run('WCAG2AA',null,options);});
+  _i('//warrenshea.github.io/sandbox/mojo/mojo.js',function(){HTMLCSAuditor.run('WCAG2AA',null,options);});
 })();
