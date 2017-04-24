@@ -622,88 +622,6 @@ var HTMLCS = new function() {
                 var i = f.createElement("div");
                 return i.className = a + "close", i.setAttribute("title", "Close"), i.onmousedown = function() { l.close.call(l) }, d.appendChild(i), d
             },
-            p = function(b, g, h) {
-                var i = f.createElement("div");
-                i.className = a + "summary";
-                var j = f.createElement("div");
-                j.className = a + "summary-left", i.appendChild(j);
-                var k = f.createElement("div");
-                k.className = a + "summary-right", i.appendChild(k);
-                var m = [],
-                    n = ', &#160;<span class="' + a + 'divider"></span>';
-                if (b > 0) {
-                    var o = "Errors";
-                    1 === b && (o = "Error"), m.push("<strong>" + b + "</strong> " + o)
-                }
-                if (g > 0) {
-                    var o = "Warnings";
-                    1 === g && (o = "Warning"), m.push("<strong>" + g + "</strong> " + o)
-                }
-                if (h > 0) {
-                    var o = "Notices";
-                    1 === h && (o = "Notice"), m.push("<strong>" + h + "</strong> " + o)
-                }
-                var p = f.createElement("ol");
-                p.className = a + "lineage";
-                var q = f.createElement("li");
-                q.className = a + "lineage-item";
-                var r = f.createElement("a");
-                r.className = a + "lineage-link", r.href = "javascript:";
-                var s = f.createElement("span");
-                s.innerHTML = "Home", r.appendChild(s), r.onmousedown = function() { l.run(c, d, e) };
-                var t = f.createElement("li");
-                return t.className = a + "lineage-item", t.innerHTML = m.join(n), q.appendChild(r), p.appendChild(q), p.appendChild(t), j.appendChild(p), k.appendChild(f.createTextNode(String.fromCharCode(160))), i
-            },
-            q = function(b, g) {
-                var i = f.createElement("div");
-                i.className = a + "summary-detail";
-                var j = f.createElement("div");
-                j.className = a + "summary-left";
-                var k = f.createElement("div");
-                k.className = a + "summary-right";
-                var n = f.createElement("ol");
-                n.className = a + "lineage";
-                var o = f.createElement("li");
-                o.className = a + "lineage-item";
-                var p = f.createElement("a");
-                p.className = a + "lineage-link", p.href = "javascript:";
-                var r = f.createElement("span");
-                r.innerHTML = "Home", p.appendChild(r), p.onmousedown = function() { l.run(c, d, e) };
-                var s = f.createElement("li");
-                s.className = a + "lineage-item";
-                var t = f.createElement("a");
-                t.className = a + "lineage-link", t.href = "javascript:", t.innerHTML = "Report", t.setAttribute("title", "Back to Report"), t.onmousedown = function() {
-                    var a = f.querySelectorAll(".HTMLCS-inner-wrapper")[0];
-                    a.style.marginLeft = "0px", a.style.maxHeight = null, i.style.display = "none";
-                    var b = f.querySelectorAll(".HTMLCS-summary")[0];
-                    b.style.display = "block"
-                };
-                var u = f.createElement("li");
-                u.className = a + "lineage-item", u.innerHTML = "Issue " + b + " of " + g, o.appendChild(p), s.appendChild(t), n.appendChild(o), n.appendChild(s), n.appendChild(u), j.appendChild(n);
-                var w = f.createElement("div");
-                w.className = a + "button-group";
-                var x = m(a + "button-previous-issue", "previous", "Previous Issue", function(a) {
-                        var c = Number(b) - 1;
-                        if (c >= 1) {
-                            v(c - 1), wrapper = i.parentNode;
-                            var d = q(c, g);
-                            wrapper.replaceChild(d, i), d.style.display = "block";
-                            var e = f.querySelectorAll(".HTMLCS-issue-detail-list")[0];
-                            e.firstChild.style.marginLeft = parseInt(e.firstChild.style.marginLeft, 10) + 300 + "px", y(c - 1)
-                        }
-                    }),
-                    z = m(a + "button-next-issue", "next", "Next Issue", function(a) {
-                        var c = Number(b) + 1;
-                        if (c <= h.length) {
-                            v(c - 1), wrapper = i.parentNode;
-                            var d = q(c, g);
-                            wrapper.replaceChild(d, i), d.style.display = "block";
-                            var e = f.querySelectorAll(".HTMLCS-issue-detail-list")[0];
-                            e.firstChild.style.marginLeft = parseInt(e.firstChild.style.marginLeft, 10) - 300 + "px", y(c - 1)
-                        }
-                    });
-                return 1 === b && (x.className += " disabled"), b === g && (z.className += " disabled"), w.appendChild(x), w.appendChild(z), k.appendChild(w), i.appendChild(j), i.appendChild(k), i
-            },
             r = function(b) {
                 var c = 300 * Math.ceil(b.length / 5),
                     d = f.createElement("div");
@@ -747,19 +665,6 @@ var HTMLCS = new function() {
                         p = f.createElement("option");
                     p.value = o, p.innerHTML = window["HTMLCS_" + o].name, o === c && (p.selected = !0), j.appendChild(p), j.onchange = function() { c = this.options[this.selectedIndex].value, l.run(c, d, e) }
                 }
-                var q = f.createElement("div");
-                q.id = a + "settings-issue-count";
-                var r = f.createElement("div");
-                r.id = a + "settings-issue-count-help", r.innerHTML = "Select the types of issues to include in the report";
-                var s = f.createElement("div");
-                s.id = a + "settings-view-report", s.innerHTML = "View Report", s.onclick = function() {
-                    if (/disabled/.test(this.className) === !1) {
-                        e.show = { error: f.getElementById(a + "include-error").checked, warning: f.getElementById(a + "include-warning").checked, notice: f.getElementById(a + "include-notice").checked };
-                        var b = f.getElementById(a + "wrapper"),
-                            d = l.build(c, h, e);
-                        e.parentElement ? e.parentElement.replaceChild(d, b) : (d.style.left = b.style.left, d.style.top = b.style.top, f.body.replaceChild(d, b)), e.listUpdateCallback && e.listUpdateCallback.call(this, h)
-                    }
-                };
                 var t = (f.getElementById(a + "wrapper"), l.countIssues(h));
                 void 0 === e.show && h.length > 0 && (e.show = { error: !0, warning: !0, notice: !1 }, 0 === t.error && 0 === t.warning && (e.show.notice = !0));
                 for (var u in t) {
