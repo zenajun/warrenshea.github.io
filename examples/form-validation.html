@@ -6,25 +6,28 @@ stylesheets : |
       *{font-family:"lato";}
       /*Cosmetic CSS*/
       .wrapper {margin:50px auto 0;width:100%;max-width:1200px}
-      form[name="example-form"] input[type="text"].error,
+      form[name="example-form"] .row {padding-bottom:20px;overflow:hidden}
+
       form[name="example-form"] .error {border:1px solid red}
       form[name="example-form"] .error-message {display:none}
       form[name="example-form"] .error-message.active {display:block;color:red}
-      form[name="example-form"] .row {padding-bottom:20px;overflow:hidden}
-      form[name="example-form"] .columns.three > div {float:left;margin-right:1%;width:32.667%}
-      form[name="example-form"] .columns > div:last-child {margin-right:0}
-      form[name="example-form"] .columns.three {overflow:auto}
-      form[name="example-form"] .columns.three .row.street-number {width:23%}
-      form[name="example-form"] .columns.three .row.street-name {width:60%}
-      form[name="example-form"] .columns.three .row.suite {width:15%}
-      form[name="example-form"] label.input-text {overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(0,0,0,0);margin:-1px;padding:0;top:-500px}
+
+      form[name="example-form"] label.screen-reader-only {overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(0,0,0,0);margin:-1px;padding:0;top:-500px}
+
       form[name="example-form"] input[type="text"],
+      form[name="example-form"] input[type="number"],
       form[name="example-form"] select {margin-bottom:3px}
-      form[name="example-form"] input[type="text"]::-webkit-input-placeholder {color:#444}
-      form[name="example-form"] input[type="text"] {width:100%;padding:7px 8px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;line-height:1.4em}
-      form[name="example-form"] select {width:100%;padding:7px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;appearance:none;overflow-wrap:initial}
+
+      form[name="example-form"] input[type="text"]::-webkit-input-placeholder,
+      form[name="example-form"] input[type="number"]::-webkit-input-placeholder {color:#444} {color:#444}
+
+      form[name="example-form"] input[type="text"],
+      form[name="example-form"] input[type="number"] {width:100%;padding:7px 8px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;line-height:1.4em}
+
       form[name="example-form"] input[type="checkbox"] + label {padding-left:2%}
       form[name="example-form"] input[type="radio"] + label {padding-left:2%}
+
+      form[name="example-form"] select {width:100%;padding:7px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;appearance:none;overflow-wrap:initial}
     </style>
 js_resources:
 - "scripts/core.js"
@@ -89,6 +92,9 @@ scripts : |
               case "postalCode": //postal code
                 regex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
                 break;
+              case "zipCode": //zip code
+                regex = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
+                break;
             }
             return regex.test(value);
           }
@@ -113,11 +119,11 @@ scripts : |
               self.displayStatus("lastName","alphaNumeric");
             }
             self.displayStatus("email","email");
-            self.displayStatus("streetNumber","alphaNumeric");
-            self.displayStatus("streetName","alphaNumeric");
-            self.displayStatus("city","alphaNumeric");
+            self.displayStatus("phone","alphaNumeric");
+            self.displayStatus("address","alphaNumeric");
             self.displayStatus("province","dropDown");
             self.displayStatus("postalCode","postalCode");
+            self.displayStatus("zipCode","zipCode");
             self.displayStatus("checkbox","checkBox");
             self.displayStatus("radioButton","radioButton");
             if (errormessage != "") {
@@ -153,73 +159,72 @@ scripts : |
 ---
       <form name="example-form" action="" method="post">
         <div class="row">
-          <label for="firstname" class="input-text">First Name</label>
+          <label for="firstname" class="screen-reader-only">First Name</label>
           <input type="text" placeholder="First name *" name="firstName" id="firstname" value="">
           <span class="firstName error-message">Please enter your first name</span>
         </div>
         <div class="row">
-          <label for="lastname" class="input-text">Last Name</label>
+          <label for="lastname" class="screen-reader-only">Last Name</label>
           <input type="text" placeholder="Last name" name="lastName" id="lastname" value="">
           <span class="lastName error-message">Please enter your last name</span>
         </div>
         <div class="row">
-          <label for="email" class="input-text">Email</label>
+          <label for="email" class="screen-reader-only">Email</label>
           <input type="text" placeholder="Email Address *" name="email" id="email" value="">
           <span class="email error-message">Please enter a valid email</span>
         </div>
-        <div class="columns three">
-          <div class="row street-number">
-            <label for="streetNumber" class="input-text">Street Number</label>
-            <input type="text" placeholder="Street Number *" name="streetNumber" id="streetNumber" value="">
-            <span class="streetNumber error-message">Please enter your street number</span>
-          </div>
-          <div class="row street-name">
-            <label for="streetName" class="input-text">Street Name</label>
-            <input type="text" placeholder="Street Name *" name="streetName" id="streetName" value="">
-            <span class="streetName error-message">Please enter your street name</span>
-          </div>
-          <div class="row suite">
-            <label for="suite" class="input-text">Suite</label>
-            <input type="text" placeholder="Apt/Suite" name="suite" id="suite" value="">
-          </div>
-        </div>
-        <div class="columns three">
-          <div class="row">
-            <label for="city" class="input-text">City</label>
-            <input type="text" placeholder="City *" name="city" id="city" value="">
-            <span class="city error-message">Please enter your city</span>
-          </div>
-          <div class="row">
-            <label for="province" class="input-text">Province</label>
-            <select name="province" id="province">
-              <optgroup label="Provinces">
-                <option value="" disabled selected>Province/Terrority *</option>
-                <option value="AB">Alberta</option>
-                <option value="BC">British Columbia</option>
-                <option value="MB">Manitoba</option>
-                <option value="NB">New Brunswick</option>
-                <option value="NL">Newfoundland and Labrador</option>
-                <option value="NS">Nova Scotia</option>
-                <option value="ON">Ontario</option>
-                <option value="PE">Prince Edward Island</option>
-                <option value="QC">Quebec</option>
-                <option value="SK">Saskatchewan</option>
-                <option value="NT">Northwest Territories</option>
-                <option value="NU">Nunavut</option>
-                <option value="YT">Yukon</option>
-              </optgroup>
-            </select>
-            <span class="province error-message">Please enter your province</span>
-          </div>
-          <div class="row">
-            <label for="postalcode" class="input-text">Postal Code</label>
-            <input type="text" placeholder="Postal Code *" name="postalCode" id="postalcode" value="">
-            <span class="postalCode error-message">Please enter your postal code</span>
+        <div class="row">
+          <label for="phone" class="screen-reader-only">Phone Number</label>
+          <input type="number" placeholder="Phone Number *" name="phone" id="phone" value="">
+          <span class="phone error-message">Please enter your phone</span>
           </div>
         </div>
         <div class="row">
-          <input name="checkbox" id="checkbox" type="checkbox" value="Yes">
-          <label for="checkbox">Checkbox label</label>
+          <label for="address" class="screen-reader-only">Address</label>
+          <input type="text" placeholder="Address *" name="address" id="address" value="">
+          <span class="address error-message">Please enter your address</span>
+          </div>
+        </div>
+        <div class="row">
+          <label for="province" class="screen-reader-only">Province</label>
+          <select name="province" id="province">
+            <optgroup label="Provinces">
+              <option value="" disabled selected>Province/Terrority *</option>
+              <option value="ON">Ontario</option>
+              <option value="AB">Alberta</option>
+              <option value="BC">British Columbia</option>
+              <option value="MB">Manitoba</option>
+              <option value="NB">New Brunswick</option>
+              <option value="NL">Newfoundland and Labrador</option>
+              <option value="NS">Nova Scotia</option>
+              <option value="ON">Ontario</option>
+              <option value="PE">Prince Edward Island</option>
+              <option value="QC">Quebec</option>
+              <option value="SK">Saskatchewan</option>
+              <option value="NT">Northwest Territories</option>
+              <option value="NU">Nunavut</option>
+              <option value="YT">Yukon</option>
+            </optgroup>
+          </select>
+          <span class="province error-message">Please enter your province</span>
+        </div>
+        <div class="row">
+          <label for="postalcode" class="screen-reader-only">Postal Code</label>
+          <input type="text" placeholder="Postal Code * (e.g. A1A1A1)" name="postalCode" id="postalcode" value="">
+          <span class="postalCode error-message">Please enter your postal code</span>
+        </div>
+        <div class="row">
+          <label for="zipcode" class="screen-reader-only">Zip Code</label>
+          <input type="text" placeholder="Zip Code * (e.g. 90210)" name="zipCode" id="zipcode" value="">
+          <span class="zipCode error-message">Please enter your zip code</span>
+        </div>
+        <div class="row">
+          <input type="checkbox" name="checkbox" id="checkbox_yes" value="Yes">
+          <label for="checkbox_yes">Checkbox Label Yes</label>
+        </div>
+        <div class="row">
+          <input type="checkbox" name="checkbox" id="checkbox_no" value="No">
+          <label for="checkbox_no">Checkbox Label No</label>
           <span class="checkbox error-message">Please check the checkbox</span>
         </div>
         <div class="row">
