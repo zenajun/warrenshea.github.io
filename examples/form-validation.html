@@ -8,7 +8,8 @@ stylesheets : |
       .wrapper {margin:50px auto 0;width:100%;max-width:1200px}
       form[name="example-form"] .row {padding-bottom:20px;overflow:hidden}
 
-      form[name="example-form"] .error {border:1px solid red}
+      form[name="example-form"] input[type="text"].error,
+      form[name="example-form"] input[type="number"].error {border:1px solid red}
       form[name="example-form"] .error-message {display:none}
       form[name="example-form"] .error-message.active {display:block;color:red}
 
@@ -19,7 +20,7 @@ stylesheets : |
       form[name="example-form"] select {margin-bottom:3px}
 
       form[name="example-form"] input[type="text"]::-webkit-input-placeholder,
-      form[name="example-form"] input[type="number"]::-webkit-input-placeholder {color:#444} {color:#444}
+      form[name="example-form"] input[type="number"]::-webkit-input-placeholder {color:#444}
 
       form[name="example-form"] input[type="text"],
       form[name="example-form"] input[type="number"] {width:100%;padding:7px 8px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;line-height:1.4em}
