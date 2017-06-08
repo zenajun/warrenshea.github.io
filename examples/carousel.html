@@ -50,9 +50,9 @@ stylesheets : |
       .carousel .chevron-control a {position:absolute;top:40%;transform:translateY(-50%);background-color:transparent;border-color:#fff;display:table-cell;vertical-align:middle;border-radius:80px;line-height:1;text-align:center;box-sizing:border-box;outline:transparent;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);background-color: rgba(0, 0, 0, 0.0.5);border: 2px solid #ccc;}
       .carousel .chevron-control a:hover {background-color: rgba(255, 255, 255, 0.25);}
       .carousel .chevron-control .arrow {display:block;width:0;height:0;border:11px solid transparent;margin:10px;}
-      .carousel .chevron-control .prev {left:15px;}
+      .carousel .chevron-control .prev {left:15px;display:none;}
       .carousel .chevron-control .prev .arrow {border-right:15px solid #ddd;transform:translateX(-30%);}
-      .carousel .chevron-control .next {right:15px;}
+      .carousel .chevron-control .next {right:15px;display:none;}
       .carousel .chevron-control .next .arrow {border-left:15px solid #ddd;transform:translateX(30%);}
 
       /*Custom per solution*/
@@ -170,7 +170,9 @@ scripts : |
                   offsetMargin = 0.08;
                 }
               }
-              if (el.hasClass("one")) { el.parent(".carousel").children(".controls-group").hide(); }
+              if (el.hasClass("one")) {
+                el.parent(".carousel").children(".controls-group").hide();
+              }
               el.next('.controls-group').children("a").each(function( index ) {
                 if ($(this).hasClass("active")) {
                   currChild = index; //set currChild as the carousel item control set as "active" in the HTML code
@@ -214,7 +216,9 @@ scripts : |
               currChild = $(this).index();
               self.updateChevronsControl(el,currChild,totalChildren);
             });
-            $('.chevron-control').css('display','block');
+            if (!el.hasClass("one")) {
+              $('.chevron-control').css('display','block');
+            }
             el.siblings(".chevron-control").children('.next').on('click', function(e){
               e.preventDefault();
               el.trigger('swipeleft');
@@ -225,8 +229,10 @@ scripts : |
             });
           },
           updateChevronsControl : function(el,currChild,totalChildren) {
-            el.siblings(".chevron-control").children('.prev').css('display','block');
-            el.siblings(".chevron-control").children('.next').css('display','block');
+            if (!el.hasClass("one")) {
+              el.siblings(".chevron-control").children('.prev').css('display','block');
+              el.siblings(".chevron-control").children('.next').css('display','block');
+            }
             if (currChild === 0){
               el.siblings(".chevron-control").children('.prev').css('display','none');
             } else if (currChild === (totalChildren)){
